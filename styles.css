@@ -1,8 +1,8 @@
 /* Common styles for all pages */
 :root {
-  --primary-color: #DD000000;
+  --primary-color: #0xDD000000;
   --secondary-color: #666;
-  --background-color: #FFF2F2F2;
+  --background-color: #0xFFF2F2F2;
   --link-color: #0066cc;
   --border-color: #ddd;
 }
