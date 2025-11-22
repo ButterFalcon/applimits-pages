@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,148 +8,188 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>FAQ - ApLimit</title>
     <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #F2F2F7;
+            --card-background: #FFFFFF;
+            --text-primary: #000000;
+            --text-secondary: #3C3C4399;
+            /* 60% opacity */
+            --separator-color: #3C3C432E;
+            /* 18% opacity */
+            --border-radius: 10px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #0A84FF;
+                --background-color: #000000;
+                --card-background: #1C1C1E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #EBEBF599;
+                /* 60% opacity */
+                --separator-color: #545458A6;
+                /* 65% opacity */
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f7;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+            padding: 16px;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
 
         header {
-            background-color: #0175C2;
-            color: #fff;
-            padding: 30px 20px;
+            margin-bottom: 24px;
             text-align: center;
+            padding: 20px 0;
         }
 
         header h1 {
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         header p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 20px;
+            font-size: 15px;
+            color: var(--text-secondary);
         }
 
         .category {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .category-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #0175C2;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e5e5e7;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            margin-left: 16px;
+            text-transform: uppercase;
+        }
+
+        .faq-list {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
 
         .faq-item {
-            margin-bottom: 12px;
-            border: 1px solid #e5e5e7;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            border-bottom: 0.5px solid var(--separator-color);
         }
 
-        .faq-item:hover {
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        .faq-item:last-child {
+            border-bottom: none;
         }
 
         .faq-question {
-            background-color: #f9f9f9;
-            padding: 16px 20px;
+            padding: 16px;
             cursor: pointer;
-            user-select: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 500;
-            color: #1d1d1f;
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-primary);
+            background-color: var(--card-background);
+            transition: background-color 0.2s;
         }
 
-        .faq-question:hover {
-            background-color: #f0f0f0;
+        .faq-question:active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .faq-question:active {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
         }
 
         .faq-question::after {
-            content: '+';
-            font-size: 24px;
-            font-weight: 300;
-            color: #0175C2;
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid #C7C7CC;
+            border-bottom: 2px solid #C7C7CC;
+            transform: rotate(45deg);
             transition: transform 0.3s ease;
-            flex-shrink: 0;
-            margin-left: 12px;
+            margin-left: 8px;
         }
 
         .faq-question.active::after {
-            transform: rotate(45deg);
+            transform: rotate(-135deg);
+            margin-top: 4px;
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            background-color: #fff;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--card-background);
         }
 
         .faq-answer-content {
-            padding: 16px 20px;
-            color: #666;
-            line-height: 1.8;
+            padding: 0 16px 16px 16px;
+            font-size: 15px;
+            color: var(--text-primary);
+            opacity: 0.9;
         }
 
         .faq-answer-content p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .faq-answer-content ul, .faq-answer-content ol {
+        .faq-answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer-content ul,
+        .faq-answer-content ol {
             margin-left: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .faq-answer-content li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .faq-answer-content strong {
-            color: #333;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         footer {
-            background-color: #f9f9f9;
-            padding: 30px 20px;
+            margin-top: 40px;
             text-align: center;
-            border-top: 1px solid #e5e5e7;
+            padding-bottom: 40px;
         }
 
         footer h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: #1d1d1f;
+            margin-bottom: 16px;
+            color: var(--text-primary);
         }
 
         .footer-links {
@@ -159,112 +200,86 @@
         }
 
         .footer-links a {
-            color: #0175C2;
+            color: var(--primary-color);
             text-decoration: none;
-            font-size: 16px;
-            transition: opacity 0.2s ease;
+            font-size: 15px;
         }
 
-        .footer-links a:hover {
-            opacity: 0.7;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .category-title {
-                font-size: 18px;
-            }
-
-            .faq-question {
-                padding: 14px 16px;
-                font-size: 15px;
-            }
-
-            .faq-answer-content {
-                padding: 14px 16px;
-                font-size: 14px;
+        /* Dark mode adjustments for specific elements */
+        @media (prefers-color-scheme: dark) {
+            .faq-question::after {
+                border-color: #545458;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
-            <h1>Frequently Asked Questions</h1>
-            <p>Find answers about ApLimit</p>
+            <h1>FAQ</h1>
+            <p>Help and Support for ApLimit</p>
         </header>
 
         <div class="content">
             <!-- Getting Started -->
             <div class="category">
-                <h2 class="category-title">Getting Started</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What is ApLimit?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimit is an iOS app designed to help you manage your smartphone usage and improve focus. You can set time limits for specific apps or categories, block apps during bedtime, and use the Pomodoro timer to stay concentrated on your work.</p>
-                            <p><strong>Key Features:</strong></p>
-                            <ul>
-                                <li>Schedule Management: Set time limits by day and time period</li>
-                                <li>Downtime: Block apps during specific hours like bedtime</li>
-                                <li>Focus Timer: Use the Pomodoro technique for concentration</li>
-                                <li>Hard Limitation: A mode that prevents immediate removal of restrictions</li>
-                            </ul>
+                <h2 class="category-title">Basics</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is ApLimit?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>ApLimit is an iOS app designed to help you manage your smartphone usage and improve
+                                    focus.</p>
+                                <p><strong>Key Features:</strong></p>
+                                <ul>
+                                    <li><strong>Time Limits:</strong> Set daily usage limits for specific apps or
+                                        categories.</li>
+                                    <li><strong>Downtime:</strong> Block apps completely during specific hours (e.g.,
+                                        bedtime).</li>
+                                    <li><strong>Focus Timer:</strong> Use the Pomodoro technique to stay concentrated.
+                                    </li>
+                                    <li><strong>Hard Limitation:</strong> A powerful mode that prevents removing
+                                        restrictions until the next day.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I get started with ApLimit?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p><strong>Step 1:</strong> Open the app and follow the on-screen instructions to grant Screen Time permissions.</p>
-                            <p><strong>Step 2:</strong> Tap the "+" button on the home screen to create a new schedule.</p>
-                            <p><strong>Step 3:</strong> Select the apps or categories you want to limit.</p>
-                            <p><strong>Step 4:</strong> Set the days and time limits (you can also use presets).</p>
-                            <p><strong>Step 5:</strong> Tap "Save" to complete the setup.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Difference between Time Limits and Downtime?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Time Limits:</strong><br>
+                                    Limits the <em>total amount</em> of time you can use apps per day (e.g., "1 hour
+                                    total"). You can use them whenever you want until the time runs out.</p>
+                                <p><strong>Downtime:</strong><br>
+                                    Blocks apps during a <em>specific time period</em> (e.g., "10:00 PM to 7:00 AM").
+                                    Perfect for ensuring uninterrupted sleep or study time.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What's the difference between Schedule and Downtime?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p><strong>Schedule:</strong> Sets daily usage time limits for specific apps or categories on selected days. For example, "Limit social media to 30 minutes per day on weekdays."</p>
-                            <p><strong>Downtime:</strong> Completely blocks selected apps or categories during specific time periods (e.g., 10:00 PM - 7:00 AM). Perfect for managing bedtime.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What's included in the free version?
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What can I do with the free version?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>The free version includes:</p>
-                            <ul>
-                                <li>Schedules: Up to 1 schedule</li>
-                                <li>App Selection: Up to 2 apps or categories</li>
-                                <li>Downtime: Unlimited settings</li>
-                                <li>Basic schedule management features</li>
-                            </ul>
-                            <p>If you need more schedules or want to manage more apps, consider upgrading to the Pro plan.</p>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>The free version includes:</p>
+                                <ul>
+                                    <li>Time Limits: Create up to 1 limit</li>
+                                    <li>App Selection: Select up to 2 apps/categories per limit</li>
+                                    <li>Downtime: Unlimited settings</li>
+                                </ul>
+                                <p>Upgrade to Pro for unlimited limits, unlimited app selection, Focus Timer, and Hard
+                                    Limitation features.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,153 +288,54 @@
             <!-- Features -->
             <div class="category">
                 <h2 class="category-title">Features</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What is Hard Limitation?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Hard Limitation is a powerful restriction feature that, once enabled, <strong>cannot be disabled until the next day</strong>. It's perfect for strengthening your self-control.</p>
-                            <p><strong>Features:</strong></p>
-                            <ul>
-                                <li>Once enabled, settings cannot be changed or deleted until the end of the day</li>
-                                <li>Available for Schedules, Focus Timer, and Downtime</li>
-                                <li>This is a Pro plan exclusive feature</li>
-                            </ul>
-                            <p><strong>Important:</strong> Please review your settings carefully before enabling Hard Limitation, as you cannot undo it once activated.</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is Hard Limitation?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Hard Limitation is a feature that, once enabled, <strong>cannot be disabled until the
+                                        next day</strong>.</p>
+                                <p>It prevents you from giving in to temptation and removing restrictions "just for a
+                                    minute."</p>
+                                <p><span class="highlight">Note:</span> Please be careful when enabling this. You will
+                                    not be able to change or delete the settings until tomorrow.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I use the Focus Timer?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Focus Timer uses the Pomodoro technique to enhance concentration (Pro plan exclusive).</p>
-                            <p><strong>How to use:</strong></p>
-                            <ol>
-                                <li>Open the Focus Timer tab</li>
-                                <li>Select the apps you want to restrict</li>
-                                <li>Set the timer duration (15 min, 30 min, 1 hour, or custom)</li>
-                                <li>Enable Hard Limitation if desired</li>
-                                <li>Tap "Start"</li>
-                            </ol>
-                            <p>When the timer ends, you'll receive a notification and your configured break time will begin.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How to use Focus Timer?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>The Focus Timer uses the Pomodoro technique (e.g., 25 min focus, 5 min break) to
+                                    boost productivity.</p>
+                                <ol>
+                                    <li>Go to the "Focus" tab</li>
+                                    <li>Select apps to block</li>
+                                    <li>Set the duration (15 min+)</li>
+                                    <li>Tap "Start"</li>
+                                </ol>
+                                <p>Selected apps will be blocked while the timer is running. If Hard Limitation is
+                                    enabled, you cannot stop the timer.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What does "Exclude Today" mean?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>The "Exclude Today" feature allows you to delay the start of a schedule until tomorrow.</p>
-                            <p><strong>Use cases:</strong></p>
-                            <ul>
-                                <li>You need to use an app today for special reasons but want restrictions from tomorrow</li>
-                                <li>You want to prepare schedules in advance</li>
-                            </ul>
-                            <p>To re-enable the schedule for today, use "Reset All Schedules" in the settings screen.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is "Disable for today"?
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I restrict by category instead of individual apps?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Yes, you can. The app selection screen allows you to choose entire categories in addition to individual apps.</p>
-                            <p><strong>Available category examples:</strong></p>
-                            <ul>
-                                <li>Social Networking</li>
-                                <li>Entertainment</li>
-                                <li>Games</li>
-                                <li>And many more</li>
-                            </ul>
-                            <p>When you select a category, all apps within that category will be automatically restricted.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Subscription & Billing -->
-            <div class="category">
-                <h2 class="category-title">Subscription & Billing</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What's included in the Pro plan?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>The Pro plan includes:</p>
-                            <ul>
-                                <li><strong>Schedules:</strong> Up to 6 schedules (free version: 1)</li>
-                                <li><strong>App Selection:</strong> Unlimited (free version: 2)</li>
-                                <li><strong>Focus Timer:</strong> Pomodoro timer functionality</li>
-                                <li><strong>Hard Limitation:</strong> Strict restriction mode</li>
-                            </ul>
-                            <p><strong>Pricing:</strong></p>
-                            <ul>
-                                <li>Monthly: ¥480/month</li>
-                                <li>Yearly: ¥4,800/year (20% savings)</li>
-                            </ul>
-                            <p>A 7-day free trial is available.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I restore my purchase?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>If you've switched to a new device or reinstalled the app, you can restore your purchase by:</p>
-                            <ol>
-                                <li>Opening the Settings screen</li>
-                                <li>Tapping "Pro Subscription"</li>
-                                <li>Tapping "Restore Purchase"</li>
-                            </ol>
-                            <p>Make sure you're signed in with the same Apple ID you used for the original purchase.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I cancel my subscription?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>You can cancel your subscription through your iPhone settings:</p>
-                            <ol>
-                                <li>Open the "Settings" app on your iPhone</li>
-                                <li>Tap your name at the top of the screen</li>
-                                <li>Tap "Subscriptions"</li>
-                                <li>Select "ApLimit"</li>
-                                <li>Tap "Cancel Subscription"</li>
-                            </ol>
-                            <p>After canceling, you'll continue to have access to Pro features until the end of your current billing period.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What happens after the 7-day free trial?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>After the 7-day free trial ends, billing will automatically begin for your selected plan (monthly or yearly).</p>
-                            <p>If you cancel during the trial period, you won't be charged. To avoid charges, cancel at least 24 hours before the trial ends.</p>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>This feature allows you to temporarily turn off a specific limit for the rest of the
+                                    day.</p>
+                                <p>Useful if you need to use an app for an emergency. The limit will automatically
+                                    resume tomorrow.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -428,130 +344,101 @@
             <!-- Troubleshooting -->
             <div class="category">
                 <h2 class="category-title">Troubleshooting</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        My restrictions aren't working
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>If your restrictions aren't working, please check the following:</p>
-                            <p><strong>1. Verify Screen Time permissions</strong></p>
-                            <ul>
-                                <li>Go to iPhone "Settings" → "Screen Time" → "ApLimit" and verify permissions are enabled</li>
-                            </ul>
-                            <p><strong>2. Check schedule settings</strong></p>
-                            <ul>
-                                <li>Are the target days enabled?</li>
-                                <li>Are the time limits set correctly?</li>
-                                <li>Is "Exclude Today" enabled?</li>
-                            </ul>
-                            <p><strong>3. Try resetting schedules</strong></p>
-                            <ul>
-                                <li>Tap "Reset All Schedules" in the settings screen</li>
-                            </ul>
-                            <p>If the problem persists, please contact us through the contact form.</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Restrictions aren't working
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If your restrictions aren't working, please check the following:</p>
+                                <p><strong>1. Verify Screen Time permissions</strong></p>
+                                <ul>
+                                    <li>Go to iPhone "Settings" → "Screen Time" → "ApLimit" and verify permissions are
+                                        enabled</li>
+                                </ul>
+                                <p><strong>2. Check schedule settings</strong></p>
+                                <ul>
+                                    <li>Are the target days enabled?</li>
+                                    <li>Are the time limits set correctly?</li>
+                                    <li>Is "Disable for today" enabled?</li>
+                                </ul>
+                                <p><strong>3. Try resetting schedules</strong></p>
+                                <ul>
+                                    <li>Tap "Reset All Schedules" in the settings screen</li>
+                                </ul>
+                                <p>If the problem persists, please contact us through the contact form.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I reset my schedules?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>If your schedules aren't working properly or you want to reset everything:</p>
-                            <ol>
-                                <li>Open the Settings screen</li>
-                                <li>Tap "Reset All Schedules"</li>
-                                <li>Tap "OK" in the confirmation dialog</li>
-                            </ol>
-                            <p><strong>Note:</strong> This operation will re-apply all schedules and Downtime settings. Your existing schedule configurations will be preserved, but the iOS-side restrictions will be re-registered.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can't edit or delete settings
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Is Hard Limitation enabled?</p>
+                                <p>If Hard Limitation is active, you cannot edit or delete settings until the next day.
+                                    This is intentional to help you stay focused.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        I can't edit or delete a schedule
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Main reasons you can't edit or delete a schedule:</p>
-                            <p><strong>Hard Limitation is enabled</strong></p>
-                            <ul>
-                                <li>When Hard Limitation is enabled, you cannot make changes until the end of the day</li>
-                                <li>You'll be able to edit or delete the schedule the next day</li>
-                            </ul>
-                            <p><strong>Focus Timer is running</strong></p>
-                            <ul>
-                                <li>You need to wait until the timer ends</li>
-                            </ul>
-                            <p>These are intentional features designed to strengthen self-control.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Prevent app deletion
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I prevent ApLimit from being deleted?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>You can use iOS Screen Time features to prevent deletion of ApLimit itself:</p>
-                            <ol>
-                                <li>Open the "Settings" app on your iPhone</li>
-                                <li>Tap "Screen Time"</li>
-                                <li>Tap "Content & Privacy Restrictions"</li>
-                                <li>Tap "iTunes & App Store Purchases"</li>
-                                <li>Set "Deleting Apps" to "Don't Allow"</li>
-                            </ol>
-                            <p>Setting a Screen Time passcode will provide even stronger protection.</p>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>To prevent deleting ApLimit itself, use iOS Screen Time settings:</p>
+                                <ol>
+                                    <li>iPhone Settings > Screen Time</li>
+                                    <li>Content & Privacy Restrictions</li>
+                                    <li>iTunes & App Store Purchases</li>
+                                    <li>Set "Deleting Apps" to "Don't Allow"</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Privacy & Security -->
+            <!-- Subscription -->
             <div class="category">
-                <h2 class="category-title">Privacy & Security</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What permissions does ApLimit need?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimit requires the following permissions:</p>
-                            <p><strong>Screen Time permission: Required</strong></p>
-                            <ul>
-                                <li>Necessary to restrict app usage time</li>
-                                <li>Required for all ApLimit features to function</li>
-                            </ul>
-                            <p><strong>Notification permission: Optional</strong></p>
-                            <ul>
-                                <li>Necessary to receive Focus Timer completion notifications</li>
-                                <li>The app will work without this permission, but you won't receive timer notifications</li>
-                            </ul>
+                <h2 class="category-title">Subscription</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How to restore purchases?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If you have a Pro plan and changed devices:</p>
+                                <ol>
+                                    <li>Go to Settings</li>
+                                    <li>Tap "Upgrade to Pro"</li>
+                                    <li>Tap "Restore Purchases"</li>
+                                </ol>
+                                <p>Ensure you are signed in with the same Apple ID used for purchase.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How does ApLimit handle my data?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimit prioritizes your privacy:</p>
-                            <ul>
-                                <li><strong>All data is stored on your device</strong></li>
-                                <li>Schedule settings and app usage information are not sent externally</li>
-                                <li>Subscription information is managed by Apple</li>
-                                <li>We do not collect personally identifiable information</li>
-                            </ul>
-                            <p>For more details, please review our <a href="https://applimits.com/en/privacypolicy" style="color: #0175C2;">Privacy Policy</a>.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How to cancel subscription?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Manage subscriptions via iPhone Settings:</p>
+                                <ol>
+                                    <li>Settings App > Tap your name at the top</li>
+                                    <li>Subscriptions</li>
+                                    <li>Select ApLimit</li>
+                                    <li>Tap "Cancel Subscription"</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -559,7 +446,7 @@
         </div>
 
         <footer>
-            <h3>Need More Help?</h3>
+            <h3>Support</h3>
             <div class="footer-links">
                 <a href="https://forms.gle/PiSg2ijeV6Qvmhu69">Contact Form</a>
                 <a href="https://applimits.com/en/termsofuse">Terms of Service</a>
@@ -569,28 +456,36 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const questions = document.querySelectorAll('.faq-question');
 
             questions.forEach(question => {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     const answer = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
-                    // Close all other answers
+                    // Close all other answers (optional)
+                    /*
                     document.querySelectorAll('.faq-question').forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
+                        if (q !== this) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.style.maxHeight = null;
+                        }
                     });
+                    */
 
                     // Toggle current answer
-                    if (!isActive) {
-                        this.classList.add('active');
+                    this.classList.toggle('active');
+
+                    if (this.classList.contains('active')) {
                         answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = null;
                     }
                 });
             });
         });
     </script>
 </body>
+
 </html>

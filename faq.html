@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,148 +8,188 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>よくある質問 - ApLimit</title>
     <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #F2F2F7;
+            --card-background: #FFFFFF;
+            --text-primary: #000000;
+            --text-secondary: #3C3C4399;
+            /* 60% opacity */
+            --separator-color: #3C3C432E;
+            /* 18% opacity */
+            --border-radius: 10px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #0A84FF;
+                --background-color: #000000;
+                --card-background: #1C1C1E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #EBEBF599;
+                /* 60% opacity */
+                --separator-color: #545458A6;
+                /* 65% opacity */
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f7;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+            padding: 16px;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
 
         header {
-            background-color: #0175C2;
-            color: #fff;
-            padding: 30px 20px;
+            margin-bottom: 24px;
             text-align: center;
+            padding: 20px 0;
         }
 
         header h1 {
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         header p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 20px;
+            font-size: 15px;
+            color: var(--text-secondary);
         }
 
         .category {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .category-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #0175C2;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e5e5e7;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            margin-left: 16px;
+            text-transform: uppercase;
+        }
+
+        .faq-list {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
 
         .faq-item {
-            margin-bottom: 12px;
-            border: 1px solid #e5e5e7;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            border-bottom: 0.5px solid var(--separator-color);
         }
 
-        .faq-item:hover {
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        .faq-item:last-child {
+            border-bottom: none;
         }
 
         .faq-question {
-            background-color: #f9f9f9;
-            padding: 16px 20px;
+            padding: 16px;
             cursor: pointer;
-            user-select: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 500;
-            color: #1d1d1f;
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-primary);
+            background-color: var(--card-background);
+            transition: background-color 0.2s;
         }
 
-        .faq-question:hover {
-            background-color: #f0f0f0;
+        .faq-question:active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .faq-question:active {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
         }
 
         .faq-question::after {
-            content: '+';
-            font-size: 24px;
-            font-weight: 300;
-            color: #0175C2;
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid #C7C7CC;
+            border-bottom: 2px solid #C7C7CC;
+            transform: rotate(45deg);
             transition: transform 0.3s ease;
-            flex-shrink: 0;
-            margin-left: 12px;
+            margin-left: 8px;
         }
 
         .faq-question.active::after {
-            transform: rotate(45deg);
+            transform: rotate(-135deg);
+            margin-top: 4px;
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            background-color: #fff;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--card-background);
         }
 
         .faq-answer-content {
-            padding: 16px 20px;
-            color: #666;
-            line-height: 1.8;
+            padding: 0 16px 16px 16px;
+            font-size: 15px;
+            color: var(--text-primary);
+            opacity: 0.9;
         }
 
         .faq-answer-content p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .faq-answer-content ul {
+        .faq-answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer-content ul,
+        .faq-answer-content ol {
             margin-left: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .faq-answer-content li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .faq-answer-content strong {
-            color: #333;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         footer {
-            background-color: #f9f9f9;
-            padding: 30px 20px;
+            margin-top: 40px;
             text-align: center;
-            border-top: 1px solid #e5e5e7;
+            padding-bottom: 40px;
         }
 
         footer h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: #1d1d1f;
+            margin-bottom: 16px;
+            color: var(--text-primary);
         }
 
         .footer-links {
@@ -159,438 +200,263 @@
         }
 
         .footer-links a {
-            color: #0175C2;
+            color: var(--primary-color);
             text-decoration: none;
-            font-size: 16px;
-            transition: opacity 0.2s ease;
+            font-size: 15px;
         }
 
-        .footer-links a:hover {
-            opacity: 0.7;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .category-title {
-                font-size: 18px;
-            }
-
-            .faq-question {
-                padding: 14px 16px;
-                font-size: 15px;
-            }
-
-            .faq-answer-content {
-                padding: 14px 16px;
-                font-size: 14px;
+        /* Dark mode adjustments for specific elements */
+        @media (prefers-color-scheme: dark) {
+            .faq-question::after {
+                border-color: #545458;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>よくある質問</h1>
-            <p>ApLimitについての疑問を解決します</p>
+            <p>ApLimitの使い方とサポート</p>
         </header>
 
         <div class="content">
             <!-- 入門・基本 -->
             <div class="category">
-                <h2 class="category-title">入門・基本</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ApLimitとは何ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimitは、スマートフォンの使用時間を管理し、集中力を高めるためのiOSアプリです。特定のアプリやカテゴリに時間制限を設定したり、就寝時間中のアプリ利用をブロックしたり、ポモドーロタイマーで作業に集中することができます。</p>
-                            <p><strong>主な機能：</strong></p>
-                            <ul>
-                                <li>スケジュール管理：曜日や時間帯ごとに使用時間を制限</li>
-                                <li>Downtime：就寝時間などにアプリをブロック</li>
-                                <li>Focus Timer：ポモドーロテクニックで集中</li>
-                                <li>Hard Limitation：制限を即座に解除できないモード</li>
-                            </ul>
+                <h2 class="category-title">基本機能</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ApLimitとは何ですか？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>ApLimitは、スマートフォンの使用時間を管理し、デジタルウェルビーイングを向上させるためのアプリです。</p>
+                                <p><strong>主な機能：</strong></p>
+                                <ul>
+                                    <li><strong>利用時間制限：</strong> アプリやカテゴリごとに1日の使用時間を制限</li>
+                                    <li><strong>ダウンタイム：</strong> 就寝時間などにアプリをまとめてブロック</li>
+                                    <li><strong>ポモドーロタイマー：</strong> 集中と休憩を繰り返して生産性を向上</li>
+                                    <li><strong>しっかり集中：</strong> 制限を翌日まで解除できなくする強力な自制機能</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        初めて使用する場合、何から始めればいいですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p><strong>ステップ1：</strong> アプリを開き、画面の指示に従ってScreen Time（スクリーンタイム）の権限を許可します。</p>
-                            <p><strong>ステップ2：</strong> ホーム画面の「+」ボタンをタップして、新しいスケジュールを作成します。</p>
-                            <p><strong>ステップ3：</strong> 制限したいアプリまたはカテゴリを選択します。</p>
-                            <p><strong>ステップ4：</strong> 曜日と時間制限を設定します（プリセットも利用できます）。</p>
-                            <p><strong>ステップ5：</strong> 「保存」をタップして完了です。</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            利用時間制限とダウンタイムの違いは？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>利用時間制限（Time Limits）：</strong><br>
+                                    「1日あたり合計1時間まで」のように、使用時間の総量を制限します。いつ使うかは自由ですが、合計時間が上限に達すると使えなくなります。</p>
+                                <p><strong>ダウンタイム（Downtime）：</strong><br>
+                                    「22:00〜7:00」のように、特定の時間帯を指定してアプリを使用不可にします。就寝時間や勉強時間の確保に最適です。</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ScheduleとDowntimeの違いは何ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p><strong>Schedule（スケジュール）：</strong> 特定のアプリやカテゴリに対して、曜日ごとに使用時間の上限を設定します。例えば「平日はSNSを1日30分まで」といった使い方ができます。</p>
-                            <p><strong>Downtime（ダウンタイム）：</strong> 特定の時間帯（例：22:00〜7:00）に、選択したアプリやカテゴリを完全にブロックします。就寝時間の管理に最適です。</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            無料版でできることは？
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        無料版でできることは何ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>無料版では以下の機能が利用できます：</p>
-                            <ul>
-                                <li>スケジュール作成：1つまで</li>
-                                <li>アプリ選択：最大2つまで</li>
-                                <li>Downtime設定：無制限</li>
-                                <li>基本的なスケジュール管理機能</li>
-                            </ul>
-                            <p>より多くのスケジュールやアプリを管理したい場合は、Proプランへのアップグレードをご検討ください。</p>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>無料版では以下の機能をご利用いただけます：</p>
+                                <ul>
+                                    <li>利用時間制限の作成：1つまで</li>
+                                    <li>制限対象の選択：2つまで（アプリ・カテゴリ・Webサイト）</li>
+                                    <li>ダウンタイム設定：無制限</li>
+                                </ul>
+                                <p>Proプランにアップグレードすると、制限の作成数や選択数が無制限になり、ポモドーロタイマーや「しっかり集中」機能が利用可能になります。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 機能説明 -->
+            <!-- 機能詳細 -->
             <div class="category">
-                <h2 class="category-title">機能説明</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Hard Limitation（厳格な制限）とは何ですか？
+                <h2 class="category-title">機能詳細</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            しっかり集中（Hard Limitation）とは何ですか？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>「しっかり集中」は、一度有効にすると<strong>翌日まで無効化できない</strong>強力な制限機能です。自制心を強化したい場合に最適です。</p>
+                                <p><strong>特徴：</strong></p>
+                                <ul>
+                                    <li>有効にすると、その日の終わりまで設定を変更・削除できません</li>
+                                    <li>利用時間制限、タイマー、ダウンタイムで利用可能</li>
+                                    <li>Proプラン限定の機能です</li>
+                                </ul>
+                                <p><strong>注意：</strong> 「しっかり集中」を有効にする前に、設定内容を十分に確認してください。一度有効にすると取り消せません。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Hard Limitationは、一度有効にすると<strong>翌日まで無効化できない</strong>強力な制限機能です。自制心を強化したい場合に最適です。</p>
-                            <p><strong>特徴：</strong></p>
-                            <ul>
-                                <li>有効にすると、その日の終わりまで設定を変更・削除できません</li>
-                                <li>スケジュール、Focus Timer、Downtimeで利用可能</li>
-                                <li>Proプラン限定の機能です</li>
-                            </ul>
-                            <p><strong>注意：</strong> Hard Limitationを有効にする前に、設定内容を十分に確認してください。一度有効にすると取り消せません。</p>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            タイマー（ポモドーロタイマー）の使い方は？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>タイマー機能は、ポモドーロテクニックを使って集中力を高める機能です（Proプラン限定）。</p>
+                                <p><strong>使い方：</strong></p>
+                                <ol>
+                                    <li>「タイマー」タブを開く</li>
+                                    <li>制限したいアプリを選択</li>
+                                    <li>タイマー時間を設定（15分、30分、1時間、またはカスタム）</li>
+                                    <li>必要に応じて「しっかり集中」を有効化</li>
+                                    <li>「開始」をタップ</li>
+                                </ol>
+                                <p>タイマーが終了すると通知が届き、設定した休憩時間が始まります。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            「今日だけ無効」とは何ですか？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>「今日だけ無効」機能を使用すると、スケジュールの適用開始を翌日からに設定できます。</p>
+                                <p><strong>使用例：</strong></p>
+                                <ul>
+                                    <li>今日は特別な事情でアプリを使いたいが、明日からは制限したい</li>
+                                    <li>スケジュールを事前に準備しておきたい</li>
+                                </ul>
+                                <p>スケジュールを再度有効にするには、設定画面の「スケジュールの再登録」を使用します。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            アプリを個別ではなく、カテゴリで制限できますか？
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>はい、できます。アプリ選択画面では、個別のアプリだけでなく、カテゴリ全体を選択することも可能です。</p>
+                                <p><strong>利用可能なカテゴリ例：</strong></p>
+                                <ul>
+                                    <li>ソーシャルネットワーキング</li>
+                                    <li>エンターテインメント</li>
+                                    <li>ゲーム</li>
+                                    <li>その他多数</li>
+                                </ul>
+                                <p>カテゴリを選択すると、そのカテゴリに含まれるすべてのアプリが自動的に制限されます。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Focus Timer（集中タイマー）の使い方は？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Focus Timerは、ポモドーロテクニックを使って集中力を高める機能です（Proプラン限定）。</p>
-                            <p><strong>使い方：</strong></p>
-                            <ol>
-                                <li>Focus Timerタブを開く</li>
-                                <li>制限したいアプリを選択</li>
-                                <li>タイマー時間を設定（15分、30分、1時間、またはカスタム）</li>
-                                <li>必要に応じてHard Limitationを有効化</li>
-                                <li>「開始」をタップ</li>
-                            </ol>
-                            <p>タイマーが終了すると通知が届き、設定した休憩時間が始まります。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        「今日を除外」とは何ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>「今日を除外」機能を使用すると、スケジュールの適用開始を翌日からに設定できます。</p>
-                            <p><strong>使用例：</strong></p>
-                            <ul>
-                                <li>今日は特別な事情でアプリを使いたいが、明日からは制限したい</li>
-                                <li>スケジュールを事前に準備しておきたい</li>
-                            </ul>
-                            <p>スケジュールを再度有効にするには、設定画面の「スケジュールの再登録」を使用します。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        アプリを個別ではなく、カテゴリで制限できますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>はい、できます。アプリ選択画面では、個別のアプリだけでなく、カテゴリ全体を選択することも可能です。</p>
-                            <p><strong>利用可能なカテゴリ例：</strong></p>
-                            <ul>
-                                <li>ソーシャルネットワーキング</li>
-                                <li>エンターテインメント</li>
-                                <li>ゲーム</li>
-                                <li>その他多数</li>
-                            </ul>
-                            <p>カテゴリを選択すると、そのカテゴリに含まれるすべてのアプリが自動的に制限されます。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- サブスクリプション・課金 -->
+            </div> <!-- トラブルシューティング -->
             <div class="category">
-                <h2 class="category-title">サブスクリプション・課金</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Proプランには何が含まれますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Proプランでは以下の機能が利用できます：</p>
-                            <ul>
-                                <li><strong>スケジュール：</strong> 最大6つまで作成可能（無料版は1つ）</li>
-                                <li><strong>アプリ選択：</strong> 無制限（無料版は2つまで）</li>
-                                <li><strong>Focus Timer：</strong> ポモドーロタイマー機能</li>
-                                <li><strong>Hard Limitation：</strong> 厳格な制限モード</li>
-                            </ul>
-                            <p><strong>料金：</strong></p>
-                            <ul>
-                                <li>月額プラン：¥480/月</li>
-                                <li>年間プラン：¥4,800/年（20%お得）</li>
-                            </ul>
-                            <p>7日間の無料トライアルをお試しいただけます。</p>
+                <h2 class="category-title">困ったときは</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            制限が機能しません
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>以下の点をご確認ください：</p>
+                                <ol>
+                                    <li><strong>スクリーンタイム権限：</strong> iPhoneの設定 > スクリーンタイム >
+                                        ApLimit で権限が許可されているか確認してください。</li>
+                                    <li><strong>設定の再登録：</strong> 設定画面の「スケジュールの再登録」を実行してください。
+                                    </li>
+                                    <li><strong>「今日だけ無効」：</strong> この設定がオンになっていないか確認してください。</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        購入を復元するにはどうすればいいですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>新しいデバイスに変更した場合や、アプリを再インストールした場合は、以下の手順で購入を復元できます：</p>
-                            <ol>
-                                <li>設定画面を開く</li>
-                                <li>「Proプランに登録」をタップ</li>
-                                <li>「購入を復元」をタップ</li>
-                            </ol>
-                            <p>購入時と同じApple IDでサインインしていることを確認してください。</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            設定を削除・編集できません
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>「しっかり集中」モードが有効になっていませんか？</p>
+                                <p>このモードが有効な場合、設定の変更や削除はロックされます。ロックは翌日になると自動的に解除されます。</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        サブスクリプションをキャンセルするには？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>サブスクリプションはiPhoneの設定からキャンセルできます：</p>
-                            <ol>
-                                <li>iPhoneの「設定」アプリを開く</li>
-                                <li>画面上部のあなたの名前をタップ</li>
-                                <li>「サブスクリプション」をタップ</li>
-                                <li>「ApLimit」を選択</li>
-                                <li>「サブスクリプションをキャンセルする」をタップ</li>
-                            </ol>
-                            <p>キャンセル後も、現在の請求期間が終了するまでProプランの機能は利用できます。</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            アプリが削除されないようにしたい
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        7日間の無料トライアル後はどうなりますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>7日間の無料トライアル期間が終了すると、自動的に選択したプラン（月額または年間）での課金が開始されます。</p>
-                            <p>トライアル期間中にキャンセルした場合は、課金されません。トライアル終了の24時間前までにキャンセルすれば、料金は発生しません。</p>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>ApLimit自体の削除を防ぐには、iOSの機能を使用します：</p>
+                                <ol>
+                                    <li>iPhoneの設定 > スクリーンタイム</li>
+                                    <li>コンテンツとプライバシーの制限</li>
+                                    <li>iTunesおよびApp Storeでの購入</li>
+                                    <li>「Appの削除」を「許可しない」に設定</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- トラブルシューティング -->
-            <div class="category">
-                <h2 class="category-title">トラブルシューティング</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        設定した制限が機能しません
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>制限が機能しない場合、以下を確認してください：</p>
-                            <p><strong>1. Screen Time権限の確認</strong></p>
-                            <ul>
-                                <li>iPhoneの「設定」→「スクリーンタイム」→「ApLimit」で権限が有効になっているか確認</li>
-                            </ul>
-                            <p><strong>2. スケジュールの設定を確認</strong></p>
-                            <ul>
-                                <li>対象の曜日が有効になっているか</li>
-                                <li>時間制限が正しく設定されているか</li>
-                                <li>「今日を除外」が有効になっていないか</li>
-                            </ul>
-                            <p><strong>3. スケジュールの再登録を試す</strong></p>
-                            <ul>
-                                <li>設定画面の「スケジュールの再登録」をタップ</li>
-                            </ul>
-                            <p>それでも問題が解決しない場合は、お問い合わせフォームからご連絡ください。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        スケジュールをリセットするにはどうすればいいですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>スケジュールが正しく機能しない場合や、すべてをリセットしたい場合：</p>
-                            <ol>
-                                <li>設定画面を開く</li>
-                                <li>「スケジュールの再登録」をタップ</li>
-                                <li>確認ダイアログで「OK」をタップ</li>
-                            </ol>
-                            <p><strong>注意：</strong> この操作により、すべてのスケジュールとDowntime設定が再適用されます。既存のスケジュール設定は保持されますが、iOS側の制限が再登録されます。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        スケジュールを編集・削除できません
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>スケジュールを編集・削除できない主な理由：</p>
-                            <p><strong>Hard Limitationが有効になっている</strong></p>
-                            <ul>
-                                <li>Hard Limitationを有効にすると、その日の終わりまで変更できません</li>
-                                <li>翌日になれば編集・削除が可能になります</li>
-                            </ul>
-                            <p><strong>Focus Timerが実行中</strong></p>
-                            <ul>
-                                <li>タイマーが終了するまで待つ必要があります</li>
-                            </ul>
-                            <p>これらは意図的な仕様で、自制心を強化するための機能です。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ApLimitアプリが削除されないようにできますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>iOSのScreen Time機能を使用して、ApLimit自体の削除を防ぐことができます：</p>
-                            <ol>
-                                <li>iPhoneの「設定」アプリを開く</li>
-                                <li>「スクリーンタイム」をタップ</li>
-                                <li>「コンテンツとプライバシーの制限」をタップ</li>
-                                <li>「iTunesおよびApp Storeでの購入」をタップ</li>
-                                <li>「Appの削除」を「許可しない」に設定</li>
-                            </ol>
-                            <p>スクリーンタイム・パスコードを設定すると、より確実に保護できます。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- プライバシー・セキュリティ -->
-            <div class="category">
-                <h2 class="category-title">プライバシー・セキュリティ</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ApLimitにはどんな権限が必要ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimitは以下の権限を必要とします：</p>
-                            <p><strong>Screen Time（スクリーンタイム）権限：必須</strong></p>
-                            <ul>
-                                <li>アプリの使用時間を制限するために必要です</li>
-                                <li>ApLimitの全機能を使用するために必須の権限です</li>
-                            </ul>
-                            <p><strong>通知権限：オプション</strong></p>
-                            <ul>
-                                <li>Focus Timerの終了通知を受け取るために必要です</li>
-                                <li>許可しなくてもアプリは使用できますが、タイマー通知が届きません</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ApLimitは私のデータをどのように扱いますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>ApLimitはプライバシーを最優先に考えています：</p>
-                            <ul>
-                                <li><strong>すべてのデータはあなたのデバイスに保存されます</strong></li>
-                                <li>スケジュール設定やアプリ使用情報は外部に送信されません</li>
-                                <li>サブスクリプション情報はAppleが管理します</li>
-                                <li>個人を特定できる情報は収集していません</li>
-                            </ul>
-                            <p>詳細は<a href="https://applimits.com/privacypolicy" style="color: #0175C2;">プライバシーポリシー</a>をご確認ください。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </ol>
         </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
-        <footer>
-            <h3>さらにサポートが必要ですか？</h3>
-            <div class="footer-links">
-                <a href="https://forms.gle/PiSg2ijeV6Qvmhu69">お問い合わせフォーム</a>
-                <a href="https://applimits.com/termsofuse">利用規約</a>
-                <a href="https://applimits.com/privacypolicy">プライバシーポリシー</a>
-            </div>
-        </footer>
+    <footer>
+        <h3>サポート</h3>
+        <div class="footer-links">
+            <a href="https://forms.gle/PiSg2ijeV6Qvmhu69">お問い合わせフォーム</a>
+            <a href="https://applimits.com/termsofuse">利用規約</a>
+            <a href="https://applimits.com/privacypolicy">プライバシーポリシー</a>
+        </div>
+    </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const questions = document.querySelectorAll('.faq-question');
 
             questions.forEach(question => {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     const answer = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
-                    // Close all other answers
+                    // Close all other answers (optional - remove if you want multiple open)
+                    /*
                     document.querySelectorAll('.faq-question').forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
+                        if (q !== this) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.style.maxHeight = null;
+                        }
                     });
+                    */
 
                     // Toggle current answer
-                    if (!isActive) {
-                        this.classList.add('active');
+                    this.classList.toggle('active');
+
+                    if (this.classList.contains('active')) {
                         answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = null;
                     }
                 });
             });
         });
     </script>
 </body>
+
 </html>
