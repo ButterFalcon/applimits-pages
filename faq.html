@@ -216,12 +216,110 @@
 
 <body>
     <div class="container">
-        <header>
-            <h1>よくある質問</h1>
-            <p>Applimitsについての疑問を解決します</p>
-        </header>
-
         <div class="content">
+            <!-- トラブルシューティング -->
+            <div class="category">
+                <h2 class="category-title">トラブルシューティング</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        設定した制限が正しく機能しません
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>制限が機能しない場合、以下を確認してください：</p>
+                            <p><strong>1.（iPhone/iPadご利用の方）デバイス間で共有を無効にする</strong></p>
+                            <ul>
+                                <li>スクリーンタイムを他のデバイスと共有している場合、動作が不安定になることが報告されております</li>
+                                <li>iPhoneの「設定」→「スクリーンタイム」→「デバイス間で共有」を無効にすることを推奨します</li>
+                            </ul>
+                            <p><strong>2.（iPhone/iPadご利用の方）Screen Time権限の確認</strong></p>
+                            <ul>
+                                <li>iPhoneの「設定」→「スクリーンタイム」→「Applimits」で権限が有効になっているか確認</li>
+                                <li>権限が無効の場合、Applimitsアプリから再度許可してください</li>
+                            </ul>
+                           <p><strong>3. スケジュールの再登録</strong></p>
+                            <ul>
+                                <li>設定画面の「スケジュールの再登録」をタップ</li>
+                            </ul>
+                            <p><strong>4. スケジュール設定の確認</strong></p>
+                            <ul>
+                                <li>対象の曜日が有効になっているか</li>
+                                <li>時間制限が0分以外に設定されているか</li>
+                                <li>「今日を除外」が有効になっていないか</li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        OS更新後に制限が効かなくなりました
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>OSのアップデート後に制限が機能しなくなった場合は、以下を試してください：</p>
+                            <p><strong>1. デバイスの再起動</strong></p>
+                            <ul>
+                                <li>デバイスを完全に再起動してください</li>
+                            </ul>
+                            <p><strong>2. スケジュールの再登録</strong></p>
+                            <ul>
+                                <li>Applimitsの設定画面を開く</li>
+                                <li>「スケジュールの再登録」をタップ</li>
+                                <li>すべてのスケジュールとダウンタイムが再適用されます</li>
+                            </ul>
+                            <p><strong>3. Screen Time権限の再確認</strong></p>
+                            <ul>
+                                <li>iPhoneの「設定」→「スクリーンタイム」→「Applimits」で権限を確認</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        「スケジュールの再登録」とは何ですか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>「スケジュールの再登録」は、すべてのスケジュールとダウンタイム設定を再適用する機能です。</p>
+                            <p><strong>使用するタイミング：</strong></p>
+                            <ul>
+                                <li>制限が正しく機能しない場合</li>
+                                <li>OSのアップデート後</li>
+                            </ul>
+                            <p><strong>実行方法：</strong></p>
+                            <ol>
+                                <li>設定画面を開く</li>
+                                <li>「スケジュールの再登録」をタップ</li>
+                                <li>確認ダイアログで「OK」をタップ</li>
+                            </ol>
+                            <p><strong>注意：</strong> この操作により、すべてのスケジュールとダウンタイム設定が再適用されます。アプリ内の設定は保持されます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        (iPhone/iPad)Applimitsアプリが削除されないようにできますか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>iPhone/iPadのScreen Time機能を使用して、Applimits自体の削除を防ぐことができます：</p>
+                            <ol>
+                                <li>iPhoneの「設定」アプリを開く</li>
+                                <li>「スクリーンタイム」をタップ</li>
+                                <li>「コンテンツとプライバシーの制限」をタップ</li>
+                                <li>「iTunesおよびApp Storeでの購入」をタップ</li>
+                                <li>「Appの削除」を「許可しない」に設定</li>
+                            </ol>
+                            <p><strong>推奨：</strong> スクリーンタイム・パスコードを設定すると、より確実に保護できます。パスコードは家族や信頼できる人に管理してもらうとさらに効果的です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 入門・基本 -->
             <div class="category">
                 <h2 class="category-title">入門・基本</h2>
@@ -321,7 +419,7 @@
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        「今日を除外」とは何ですか？
+                        「今日だけ無効」とは何ですか？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
@@ -343,7 +441,7 @@
                             <p>設定した時間制限に達すると、選択したアプリやカテゴリが自動的にブロックされます。</p>
                             <p><strong>制限中の動作：</strong></p>
                             <ul>
-                                <li>制限されたアプリを開こうとすると、iOSのScreen Time画面が表示されます</li>
+                                <li>制限されたアプリを開こうとすると、iPhone/iPadのScreen Time画面が表示されます</li>
                                 <li>「しっかり集中」を有効にしていない場合は、「今日だけ無効」で一時的に解除できます</li>
                                 <li>翌日0:00に時間制限がリセットされ、再び有効になります</li>
                             </ul>
@@ -353,7 +451,7 @@
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        (iOS)カテゴリで制限すると、どのアプリが対象になりますか？
+                        (iPhone/iPad)カテゴリで制限すると、どのアプリが対象になりますか？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
@@ -486,110 +584,8 @@
                             </ul>
                         </div>
                     </div>
-
             </div>
 
-            <!-- トラブルシューティング -->
-            <div class="category">
-                <h2 class="category-title">トラブルシューティング</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        設定した制限が機能しません
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>制限が機能しない場合、以下を順番に確認してください：</p>
-                            <p><strong>1. Screen Time権限の確認</strong></p>
-                            <ul>
-                                <li>iPhoneの「設定」→「スクリーンタイム」→「Applimits」で権限が有効になっているか確認</li>
-                                <li>権限が無効の場合、Applimitsアプリから再度許可してください</li>
-                            </ul>
-                            <p><strong>2. スケジュール設定の確認</strong></p>
-                            <ul>
-                                <li>対象の曜日が有効になっているか</li>
-                                <li>時間制限が0分以外に設定されているか</li>
-                                <li>「今日を除外」が有効になっていないか</li>
-                            </ul>
-                            <p><strong>3. デバイスの再起動</strong></p>
-                            <ul>
-                                <li>OSの更新後などは、デバイスを再起動してください</li>
-                            </ul>
-                            <p><strong>4. スケジュールの再登録</strong></p>
-                            <ul>
-                                <li>設定画面の「スケジュールの再登録」をタップ</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        iOS更新後に制限が効かなくなりました
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>iOSのアップデート後に制限が機能しなくなった場合は、以下を試してください：</p>
-                            <p><strong>1. デバイスの再起動（最も効果的）</strong></p>
-                            <ul>
-                                <li>iPhoneを完全に再起動してください</li>
-                            </ul>
-                            <p><strong>2. スケジュールの再登録</strong></p>
-                            <ul>
-                                <li>Applimitsの設定画面を開く</li>
-                                <li>「スケジュールの再登録」をタップ</li>
-                                <li>すべてのスケジュールとダウンタイムが再適用されます</li>
-                            </ul>
-                            <p><strong>3. Screen Time権限の再確認</strong></p>
-                            <ul>
-                                <li>iPhoneの「設定」→「スクリーンタイム」→「Applimits」で権限を確認</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        「スケジュールの再登録」とは何ですか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>「スケジュールの再登録」は、すべてのスケジュールとダウンタイム設定を再適用する機能です。</p>
-                            <p><strong>使用するタイミング：</strong></p>
-                            <ul>
-                                <li>制限が正しく機能しない場合</li>
-                                <li>OSのアップデート後</li>
-                            </ul>
-                            <p><strong>実行方法：</strong></p>
-                            <ol>
-                                <li>設定画面を開く</li>
-                                <li>「スケジュールの再登録」をタップ</li>
-                                <li>確認ダイアログで「OK」をタップ</li>
-                            </ol>
-                            <p><strong>注意：</strong> この操作により、すべてのスケジュールとダウンタイム設定が再適用されます。アプリ内の設定は保持されます。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Applimitsアプリが削除されないようにできますか？
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>iOSのScreen Time機能を使用して、Applimits自体の削除を防ぐことができます：</p>
-                            <ol>
-                                <li>iPhoneの「設定」アプリを開く</li>
-                                <li>「スクリーンタイム」をタップ</li>
-                                <li>「コンテンツとプライバシーの制限」をタップ</li>
-                                <li>「iTunesおよびApp Storeでの購入」をタップ</li>
-                                <li>「Appの削除」を「許可しない」に設定</li>
-                            </ol>
-                            <p><strong>推奨：</strong> スクリーンタイム・パスコードを設定すると、より確実に保護できます。パスコードは家族や信頼できる人に管理してもらうとさらに効果的です。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
