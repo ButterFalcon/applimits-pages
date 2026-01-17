@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>FAQ - ApLimit</title>
+    <title>FAQ - Applimits</title>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -218,10 +218,122 @@
     <div class="container">
         <header>
             <h1>FAQ</h1>
-            <p>Help and Support for ApLimit</p>
+            <p>Help and Support for Applimits</p>
         </header>
 
         <div class="content">
+            <!-- Troubleshooting -->
+            <div class="category">
+                <h2 class="category-title">Troubleshooting</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Restrictions aren't working
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If your restrictions aren't working, please check the following:</p>
+                                <p><strong>1. (iPhone/iPad users) Disable Share Across Devices</strong></p>
+                                <ul>
+                                    <li>If Screen Time is shared across devices, Apple has reported that it may cause instability</li>
+                                    <li>We recommend disabling "Share Across Devices" in iPhone Settings → Screen Time</li>
+                                    <li>We recommend disabling "Share Across Devices" in Mac System Settings → Screen Time</li>
+                                    <li>Even if you disable this setting on iPhone, if it remains enabled on Mac, "Share Across Devices" will be re-enabled. You need to disable it on all devices.</li>
+                                </ul>
+                                <p><strong>2. (iPhone/iPad users) Verify Screen Time permissions</strong></p>
+                                <ul>
+                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimitsts" and verify permissions are
+                                        enabled</li>
+                                    <li>If disabled, grant permission again from the Applimits app</li>
+                                </ul>
+                                <p><strong>3. (iPhone/iPad users) MDM users</strong></p>
+                                <ul>
+                                    <li>On devices with MDM control (Google Device Policy, Intune, etc.), the MDM sync timing may cause issues with the app's time limit settings</li>
+                                    <li>If issues occur, please tap "Re-register All Schedules" in the settings screen</li>
+                                </ul>
+                                <p><strong>4. Re-register schedules</strong></p>
+                                <ul>
+                                    <li>If you changed your device's Screen Time or other settings, the app's settings may be removed</li>
+                                    <li>Please tap "Re-register All Schedules" in the settings screen to re-apply</li>
+                                </ul>
+                                <p><strong>5. Check schedule settings</strong></p>
+                                <ul>
+                                    <li>Are the target days enabled?</li>
+                                    <li>Are the time limits set correctly?</li>
+                                    <li>Is "Disable for today" enabled?</li>
+                                </ul>
+                                <p>If the problem persists, please contact us through the contact form.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Restrictions stopped working after an OS update
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If restrictions stop working after an OS update, try the following:</p>
+                                <p><strong>1. Restart your device</strong></p>
+                                <ul>
+                                    <li>Completely restart your device</li>
+                                </ul>
+                                <p><strong>2. Re-register schedules</strong></p>
+                                <ul>Applimits
+                                    <li>Open Applimits Settings screen</li>
+                                    <li>Tap "Re-register All Schedules"</li>
+                                    <li>All schedules and Downtime settings will be re-applied</li>
+                                </ul>
+                                <p><strong>3. Re-verify Screen Time permissions</strong></p>
+                                <ul>
+                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimits" and verify permissions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What does "Re-register All Schedules" do?
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>"Applimitsster All Schedules" re-applies all schedule and Downtime settings.</p>
+                                <p><strong>When to use:</strong></p>
+                                <ul>
+                                    <li>When restrictions aren't working properly</li>
+                                   Applimitster an OS update</li>
+                                </ul>
+                                <p><strong>How to do it:</strong></p>
+                                <ol>
+                                    <li>Open the Settings screen</li>
+                                    <li>Tap "Re-register All Schedules"</li>
+                                    <li>Tap "OK" in the confirmation dialog</li>
+                                </ol>
+                                <p><strong>Note:</strong> This operation re-applies all schedule and Downtime settings. Your app settings are preserved.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            (iPhone/iPad) Prevent app deletion
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>To prevent deleting ApLimit itself, use iPhone/iPad Screen Time settings:</p>
+                                <ol>
+                                    <li>iPhone Settings > Screen Time</li>
+                                    <li>Content & Privacy Restrictions</li>
+                                    <li>iTunes & App Store Purchases</li>
+                                    <li>Set "Deleting Apps" to "Don't Allow"</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Getting Started -->
             <div class="category">
                 <h2 class="category-title">Basics</h2>
@@ -330,81 +442,11 @@
                             What is "Disable for today"?
                         </div>
                         <div class="faq-answer">
-                            <div class="faq-answer-content">
+                            <div class="faq-ansApplimitstent">
                                 <p>This feature allows you to temporarily turn off a specific limit for the rest of the
                                     day.</p>
                                 <p>Useful if you need to use an app for an emergency. The limit will automatically
                                     resume tomorrow.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Troubleshooting -->
-            <div class="category">
-                <h2 class="category-title">Troubleshooting</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Restrictions aren't working
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>If your restrictions aren't working, please check the following:</p>
-                                <p><strong>1. (iPhone/iPad users) Disable Share Across Devices</strong></p>
-                                <ul>
-                                    <li>If Screen Time is shared across devices, Apple has reported that it may cause instability</li>
-                                    <li>We recommend disabling "Share Across Devices" in iPhone Settings → Screen Time</li>
-                                    <li>We recommend disabling "Share Across Devices" in Mac System Settings → Screen Time</li>
-                                    <li>Even if you disable this setting on iPhone, if it remains enabled on Mac, "Share Across Devices" will be re-enabled. You need to disable it on all devices.</li>
-                                </ul>
-                                <p><strong>2. (iPhone/iPad users) Verify Screen Time permissions</strong></p>
-                                <ul>
-                                    <li>Go to iPhone "Settings" → "Screen Time" → "ApLimit" and verify permissions are
-                                        enabled</li>
-                                </ul>
-                                <p><strong>3. Re-register schedules</strong></p>
-                                <ul>
-                                    <li>Tap "Re-register All Schedules" in the settings screen</li>
-                                </ul>
-                                <p><strong>4. Check schedule settings</strong></p>
-                                <ul>
-                                    <li>Are the target days enabled?</li>
-                                    <li>Are the time limits set correctly?</li>
-                                    <li>Is "Disable for today" enabled?</li>
-                                </ul>
-                                <p>If the problem persists, please contact us through the contact form.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Can't edit or delete settings
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Is Hard Limitation enabled?</p>
-                                <p>If Hard Limitation is active, you cannot edit or delete settings until the next day.
-                                    This is intentional to help you stay focused.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            (iPhone/iPad) Prevent app deletion
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>To prevent deleting ApLimit itself, use iPhone/iPad Screen Time settings:</p>
-                                <ol>
-                                    <li>iPhone Settings > Screen Time</li>
-                                    <li>Content & Privacy Restrictions</li>
-                                    <li>iTunes & App Store Purchases</li>
-                                    <li>Set "Deleting Apps" to "Don't Allow"</li>
-                                </ol>
                             </div>
                         </div>
                     </div>
