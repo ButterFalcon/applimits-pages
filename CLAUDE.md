@@ -1,5 +1,9 @@
 # CLAUDE.md — AI Assistant Guide for applimits-pages
 
+## Communication Language
+
+**ユーザーとのやりとりは日本語で行うこと。** Communicate with the user in Japanese.
+
 ## Project Overview
 
 This is the **static website** for [Applimits](https://applimits.com), an iOS/macOS screen time management app by ButterFalcon. The site is hosted on **GitHub Pages** with the custom domain `applimits.com`.
