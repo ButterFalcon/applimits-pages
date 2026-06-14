@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>FAQ - Applimits</title>
+    <title>常见问题 - Applimits</title>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -217,294 +217,395 @@
 <body>
     <div class="container">
         <header>
-            <h1>FAQ</h1>
-            <p>Help and Support for Applimits</p>
+            <h1>常见问题</h1>
+            <p>查找有关 Applimits 的解答</p>
         </header>
 
         <div class="content">
-            <!-- Troubleshooting -->
+            <!-- 故障排除 -->
             <div class="category">
-                <h2 class="category-title">Troubleshooting</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Restrictions aren't working
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>⚠ iOS 26 用户须知</strong></p>
-                                <p>iOS 26 中存在应用使用时间限制（屏幕使用时间的App限额）无法正常工作的问题。详情请参阅 <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>。</p>
-                                <p>如果您频繁遇到此问题，建议在修复前使用"定时限制"或"立即限制"作为替代方案。</p>
-                                <p>If your restrictions aren't working, please check the following:</p>
-                                <p><strong>1. (iPhone/iPad users) Disable Share Across Devices</strong></p>
-                                <ul>
-                                    <li>If Screen Time is shared across devices, Apple has reported that it may cause instability</li>
-                                    <li>We recommend disabling "Share Across Devices" in iPhone Settings → Screen Time</li>
-                                    <li>We recommend disabling "Share Across Devices" in Mac System Settings → Screen Time</li>
-                                    <li>Even if you disable this setting on iPhone, if it remains enabled on Mac, "Share Across Devices" will be re-enabled. You need to disable it on all devices.</li>
-                                </ul>
-                                <p><strong>2. (iPhone/iPad users) Verify Screen Time permissions</strong></p>
-                                <ul>
-                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimitsts" and verify permissions are
-                                        enabled</li>
-                                    <li>If disabled, grant permission again from the Applimits app</li>
-                                </ul>
-                                <p><strong>3. (iPhone/iPad users) MDM users</strong></p>
-                                <ul>
-                                    <li>On devices with MDM control (Google Device Policy, Intune, etc.), the MDM sync timing may cause issues with the app's time limit settings</li>
-                                    <li>If issues occur, please tap "Re-register All Schedules" in the settings screen</li>
-                                </ul>
-                                <p><strong>4. Re-register schedules</strong></p>
-                                <ul>
-                                    <li>If you changed your device's Screen Time or other settings, the app's settings may be removed</li>
-                                    <li>Please tap "Re-register All Schedules" in the settings screen to re-apply</li>
-                                </ul>
-                                <p><strong>5. Check schedule settings</strong></p>
-                                <ul>
-                                    <li>Are the target days enabled?</li>
-                                    <li>Are the time limits set correctly?</li>
-                                    <li>Is "Disable for today" enabled?</li>
-                                </ul>
-                                <p>If the problem persists, please contact us through the contact form.</p>
-                            </div>
+                <h2 class="category-title">故障排除</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        设置的限制无法正常工作
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>⚠ iOS 26 用户须知</strong></p>
+                            <p>iOS 26 中存在使用时间限制（屏幕使用时间的App限额）无法正常工作的问题。详情请参阅 <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>。</p>
+                            <p>如果此问题频繁出现，请在修复前考虑使用"定时限制"或"立即限制"作为替代方案。</p>
+                            <p>如果限制无法正常工作，请检查以下事项：</p>
+                            <p><strong>1.（iPhone/iPad 用户）关闭跨设备共享</strong></p>
+                            <ul>
+                                <li>Apple 已报告，跨设备共享屏幕使用时间可能导致不稳定</li>
+                                <li>建议在 iPhone 的"设置"→"屏幕使用时间"→"跨设备共享"中关闭此功能</li>
+                                <li>建议在 Mac 的"设置"→"屏幕使用时间"→"跨设备共享"中关闭此功能</li>
+                                <li>即使在 iPhone 上关闭此设置，如果 Mac 上仍然启用，"跨设备共享"可能会重新启用。建议在所有设备上关闭</li>
+                            </ul>
+                            <p><strong>2.（iPhone/iPad 用户）检查 Screen Time 权限</strong></p>
+                            <ul>
+                                <li>前往 iPhone 的"设置"→"屏幕使用时间"→"Applimits"，确认权限已启用</li>
+                                <li>如果权限已关闭，请从 Applimits 应用重新授权</li>
+                            </ul>
+                            <p><strong>3.（iPhone/iPad 用户）MDM 用户</strong></p>
+                            <ul>
+                                <li>在使用 Google Device Policy 或 Intune 等 MDM 管理的设备上，MDM 同步时可能导致应用内的使用时间设置出现问题</li>
+                                <li>如果出现问题，请在设置界面执行"重新注册日程"</li>
+                            </ul>
+                            <p><strong>4. 重新注册日程</strong></p>
+                            <ul>
+                                <li>如果更改了设备的屏幕使用时间或其他设置，应用的设置可能会被解除。</li>
+                                <li>请在设置界面点击"重新注册日程"以重新应用设置</li>
+                            </ul>
+                            <p><strong>5. 检查日程设置</strong></p>
+                            <ul>
+                                <li>目标星期几是否已启用？</li>
+                                <li>时间限制是否设置为非0分钟？</li>
+                                <li>"仅今天禁用"是否已开启？</li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        OS 更新后限制不再生效
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>如果 OS 更新后限制不再生效，请尝试以下操作：</p>
+                            <p><strong>1. 重启设备</strong></p>
+                            <ul>
+                                <li>请完全重启您的设备</li>
+                            </ul>
+                            <p><strong>2. 重新注册日程</strong></p>
+                            <ul>
+                                <li>打开 Applimits 的设置界面</li>
+                                <li>点击"重新注册日程"</li>
+                                <li>所有日程和停用时间设置将被重新应用</li>
+                            </ul>
+                            <p><strong>3. 重新确认 Screen Time 权限</strong></p>
+                            <ul>
+                                <li>前往 iPhone 的"设置"→"屏幕使用时间"→"Applimits"确认权限</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Restrictions stopped working after an OS update
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>If restrictions stop working after an OS update, try the following:</p>
-                                <p><strong>1. Restart your device</strong></p>
-                                <ul>
-                                    <li>Completely restart your device</li>
-                                </ul>
-                                <p><strong>2. Re-register schedules</strong></p>
-                                <ul>Applimits
-                                    <li>Open Applimits Settings screen</li>
-                                    <li>Tap "Re-register All Schedules"</li>
-                                    <li>All schedules and Downtime settings will be re-applied</li>
-                                </ul>
-                                <p><strong>3. Re-verify Screen Time permissions</strong></p>
-                                <ul>
-                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimits" and verify permissions</li>
-                                </ul>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        什么是"重新注册日程"？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>"重新注册日程"是一个重新应用所有日程和停用时间设置的功能。</p>
+                            <p><strong>使用时机：</strong></p>
+                            <ul>
+                                <li>限制无法正常工作时</li>
+                                <li>OS 更新后</li>
+                            </ul>
+                            <p><strong>执行方法：</strong></p>
+                            <ol>
+                                <li>打开设置界面</li>
+                                <li>点击"重新注册日程"</li>
+                                <li>在确认对话框中点击"确定"</li>
+                            </ol>
+                            <p><strong>注意：</strong> 此操作将重新应用所有日程和停用时间设置。应用内的设置将被保留。</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What does "Re-register All Schedules" do?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>"Applimitsster All Schedules" re-applies all schedule and Downtime settings.</p>
-                                <p><strong>When to use:</strong></p>
-                                <ul>
-                                    <li>When restrictions aren't working properly</li>
-                                   Applimitster an OS update</li>
-                                </ul>
-                                <p><strong>How to do it:</strong></p>
-                                <ol>
-                                    <li>Open the Settings screen</li>
-                                    <li>Tap "Re-register All Schedules"</li>
-                                    <li>Tap "OK" in the confirmation dialog</li>
-                                </ol>
-                                <p><strong>Note:</strong> This operation re-applies all schedule and Downtime settings. Your app settings are preserved.</p>
-                            </div>
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        (iPhone/iPad) 可以防止 Applimits 应用被删除吗？
                     </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            (iPhone/iPad) Prevent app deletion
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>To prevent deleting ApLimit itself, use iPhone/iPad Screen Time settings:</p>
-                                <ol>
-                                    <li>iPhone Settings > Screen Time</li>
-                                    <li>Content & Privacy Restrictions</li>
-                                    <li>iTunes & App Store Purchases</li>
-                                    <li>Set "Deleting Apps" to "Don't Allow"</li>
-                                </ol>
-                            </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>您可以使用 iPhone/iPad 的 Screen Time 功能来防止 Applimits 被删除：</p>
+                            <ol>
+                                <li>打开 iPhone 的"设置"应用</li>
+                                <li>点击"屏幕使用时间"</li>
+                                <li>点击"内容和隐私访问限制"</li>
+                                <li>点击"iTunes 与 App Store 购买项目"</li>
+                                <li>将"删除 App"设置为"不允许"</li>
+                            </ol>
+                            <p><strong>建议：</strong> 设置屏幕使用时间密码可以提供更可靠的保护。让家人或信任的人管理密码会更加有效。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Getting Started -->
+            <!-- 入门基础 -->
             <div class="category">
-                <h2 class="category-title">Basics</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is ApLimit?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>ApLimit is an iOS app designed to help you manage your smartphone usage and improve
-                                    focus.</p>
-                                <p><strong>Key Features:</strong></p>
-                                <ul>
-                                    <li><strong>Time Limits:</strong> Set daily usage limits for specific apps or
-                                        categories.</li>
-                                    <li><strong>Downtime:</strong> Block apps completely during specific hours (e.g.,
-                                        bedtime).</li>
-                                    <li><strong>Focus Timer:</strong> Use the Pomodoro technique to stay concentrated.
-                                    </li>
-                                    <li><strong>Hard Limitation:</strong> A powerful mode that prevents removing
-                                        restrictions until the next day.</li>
-                                </ul>
-                            </div>
+                <h2 class="category-title">入门基础</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Applimits 是什么？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Applimits 是一款帮助您管理智能手机使用时间并保持专注的应用。您可以为特定应用设置时间限制，在就寝时间阻止应用使用，还可以使用番茄钟专注于工作。</p>
+                            <p><strong>主要功能：</strong></p>
+                            <ul>
+                                <li>使用时间限制：按星期几设置每日使用时间</li>
+                                <li>立即限制：使用计时器功能立即限制应用</li>
+                                <li>定时限制：设置不能使用应用的时间段</li>
+                                <li>严格限制：无法立即解除限制的强力模式</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Difference between Time Limits and Downtime?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>Time Limits:</strong><br>
-                                    Limits the <em>total amount</em> of time you can use apps per day (e.g., "1 hour
-                                    total"). You can use them whenever you want until the time runs out.</p>
-                                <p><strong>Downtime:</strong><br>
-                                    Blocks apps during a <em>specific time period</em> (e.g., "10:00 PM to 7:00 AM").
-                                    Perfect for ensuring uninterrupted sleep or study time.</p>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        首次使用时应该从哪里开始？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>步骤1：</strong> 打开应用，按照屏幕指示授权 Screen Time（屏幕使用时间）权限。此权限为必需。</p>
+                            <p><strong>步骤2：</strong> 点击主屏幕上的"+"按钮创建新设置。</p>
+                            <p><strong>步骤3：</strong> 选择要限制的应用或类别。</p>
+                            <p><strong>步骤4：</strong> 设置星期几和时间限制。也可以使用预设（工作日/周末/每天）。</p>
+                            <p><strong>步骤5：</strong> 点击"保存"即可完成。</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What's included in the free version?
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Schedule 和 Downtime 有什么区别？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>使用时间限制：</strong> 为特定应用或类别设置每日使用时间上限。例如："工作日限制社交媒体每天30分钟"。</p>
+                            <p><strong>定时限制：</strong> 在特定时间段内完全阻止所选应用。例如："22:00～次日7:00阻止社交媒体"。非常适合管理就寝时间。</p>
+                            <p><strong>主要区别：</strong></p>
+                            <ul>
+                                <li>Schedule：限制每日总使用时间</li>
+                                <li>Downtime：在特定时间段内完全阻止</li>
+                            </ul>
                         </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>The free version includes:</p>
-                                <ul>
-                                    <li>Time Limits: Create up to 1 limit</li>
-                                    <li>App Selection: Select up to 2 apps/categories per limit</li>
-                                    <li>Downtime: Unlimited settings</li>
-                                </ul>
-                                <p>Upgrade to Pro for unlimited limits, unlimited app selection, Focus Timer, and Hard
-                                    Limitation features.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        免费版和 Pro 版有什么区别？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>免费版：</strong></p>
+                            <ul>
+                                <li>日程：最多1个</li>
+                                <li>严格限制：不可用</li>
+                            </ul>
+                            <p><strong>Pro 版：</strong></p>
+                            <ul>
+                                <li>日程：最多6个</li>
+                                <li>严格限制：可用</li>
+                            </ul>
+                            <p>可通过7天免费试用体验 Pro 功能。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Features -->
+            <!-- 使用时间限制 -->
             <div class="category">
-                <h2 class="category-title">Features</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is Hard Limitation?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Hard Limitation is a feature that, once enabled, <strong>cannot be disabled until the
-                                        next day</strong>.</p>
-                                <p>It prevents you from giving in to temptation and removing restrictions "just for a
-                                    minute."</p>
-                                <p><span class="highlight">Note:</span> Please be careful when enabling this. You will
-                                    not be able to change or delete the settings until tomorrow.</p>
-                            </div>
+                <h2 class="category-title">使用时间限制</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        如何设置使用时间限制？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>您可以设置每日应用使用时间。</p>
+                            <p><strong>设置方法：</strong></p>
+                            <ul>
+                                <li>如果选择了多个应用，当合计使用时间超过设定时间时将触发限制</li>
+                                <li>可以为每个星期几设置不同的时间限制</li>
+                                <li>使用预设（工作日/周末/每天）可以轻松批量设置</li>
+                                <li>设置为0分钟时，该日将完全阻止应用</li>
+                            </ul>
+                            <p><strong>示例：</strong> 可以设置"周一至周五30分钟，周六周日60分钟"。</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to use Focus Timer?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>The Focus Timer uses the Pomodoro technique (e.g., 25 min focus, 5 min break) to
-                                    boost productivity.</p>
-                                <ol>
-                                    <li>Go to the "Focus" tab</li>
-                                    <li>Select apps to block</li>
-                                    <li>Set the duration (15 min+)</li>
-                                    <li>Tap "Start"</li>
-                                </ol>
-                                <p>Selected apps will be blocked while the timer is running. If Hard Limitation is
-                                    enabled, you cannot stop the timer.</p>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        什么是"仅今天禁用"？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>"仅今天禁用"功能允许您解除今天的限制，将应用开始时间设置为明天。</p>
+                            <p><strong>使用示例：</strong></p>
+                            <ul>
+                                <li>今天因特殊原因需要使用应用，但从明天开始想要限制</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is "Disable for today"?
+                <div class="faq-item">
+                    <div class="faq-question">
+                        达到时间限制后会怎样？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>当达到设定的时间限制时，所选的应用或类别将被自动阻止。</p>
+                            <p><strong>限制期间的行为：</strong></p>
+                            <ul>
+                                <li>尝试打开被限制的应用时，将显示 iPhone/iPad 的 Screen Time 屏幕</li>
+                                <li>如果未启用"严格限制"，可以通过"仅今天禁用"临时解除</li>
+                                <li>次日0:00时间限制将重置并重新生效</li>
+                            </ul>
                         </div>
-                        <div class="faq-answer">
-                            <div class="faq-ansApplimitstent">
-                                <p>This feature allows you to temporarily turn off a specific limit for the rest of the
-                                    day.</p>
-                                <p>Useful if you need to use an app for an emergency. The limit will automatically
-                                    resume tomorrow.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        (iPhone/iPad) 按类别限制时，哪些应用会受到影响？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>选择类别后，该类别中的所有应用将被自动限制。</p>
+                            <p><strong>可用类别示例：</strong></p>
+                            <ul>
+                                <li>社交网络（Twitter、Instagram、Facebook 等）</li>
+                                <li>娱乐（YouTube、Netflix、TikTok 等）</li>
+                                <li>游戏（所有游戏应用）</li>
+                                <li>其他众多类别</li>
+                            </ul>
+                            <p>在类别中安装新应用时，也会自动纳入限制范围。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Subscription -->
+            <!-- 定时限制 -->
             <div class="category">
-                <h2 class="category-title">Subscription</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to restore purchases?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>If you have a Pro plan and changed devices:</p>
-                                <ol>
-                                    <li>Go to Settings</li>
-                                    <li>Tap "Upgrade to Pro"</li>
-                                    <li>Tap "Restore Purchases"</li>
-                                </ol>
-                                <p>Ensure you are signed in with the same Apple ID used for purchase.</p>
-                            </div>
+                <h2 class="category-title">定时限制</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        定时限制在什么时候最有效？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>这是在特定时间段内完全阻止应用的功能。在以下场景中非常有效：</p>
+                            <p><strong>就寝时间：</strong> 22:00～次日7:00阻止社交媒体，提高睡眠质量</p>
+                            <p><strong>学习时间：</strong> 19:00～21:00阻止游戏和视频应用</p>
+                            <p><strong>深夜防护：</strong> 0:00～6:00阻止娱乐应用，防止熬夜</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to cancel subscription?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Manage subscriptions via iPhone Settings:</p>
-                                <ol>
-                                    <li>Settings App > Tap your name at the top</li>
-                                    <li>Subscriptions</li>
-                                    <li>Select ApLimit</li>
-                                    <li>Tap "Cancel Subscription"</li>
-                                </ol>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        定时限制可以跨越午夜设置吗？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>是的，可以。支持跨越午夜的设置。</p>
+                            <p><strong>示例：</strong> 设置"22:00～次日7:00"后，应用将从晚上10点阻止到次日早上7点。</p>
+                            <p><strong>预设：</strong></p>
+                            <ul>
+                                <li>就寝时间（22:00～次日7:00）</li>
+                                <li>学习时间（19:00～21:00）</li>
+                                <li>深夜（0:00～6:00）</li>
+                            </ul>
+                            <p>也可以为每个星期几设置不同的配置。</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- 立即专注 -->
+            <div class="category">
+                <h2 class="category-title">立即专注</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        什么是立即专注？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>这是使用计时器功能和番茄工作法来提高专注力的功能。</p>
+                            <p><strong>什么是番茄工作法：</strong> 通过交替进行25分钟专注工作和5分钟休息来保持高度专注的时间管理方法。</p>
+                            <p><strong>使用方法：</strong></p>
+                            <ol>
+                                <li>选择要限制的应用</li>
+                                <li>设置计时器时间（15分钟、30分钟、1小时或自定义）</li>
+                                <li>启用番茄钟</li>
+                                <li>设置休息时间</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        计时器结束时会收到通知吗？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>是的，计时器结束时会收到通知（需要授权通知权限）。</p>
+                            <p><strong>通知内容：</strong></p>
+                            <ul>
+                                <li>计时器结束通知</li>
+                                <li>设定的休息时间开始</li>
+                            </ul>
+                            <p><strong>注意：</strong> 通知权限为可选项，但如果不授权，将无法收到计时器结束通知。建议在首次启动时或从设置界面授权通知权限。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 严格限制 -->
+            <div class="category">
+                <h2 class="category-title">严格限制</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        什么是严格限制？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>严格限制是一旦启用就<strong>无法在次日0:00之前禁用</strong>的强力限制功能（仅限 Pro 版）。</p>
+                            <p><strong>特点：</strong></p>
+                            <ul>
+                                <li>启用后，次日0:00之前无法更改或删除设置</li>
+                                <li>可用于日程、专注计时器和停用时间</li>
+                                <li>增强自制力，创造不受诱惑的环境</li>
+                            </ul>
+                            <p><span class="highlight">注意：</span> 启用严格限制前请仔细确认设置内容。一旦启用将无法撤销。（如确实需要解除，请删除应用。）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        严格限制真的无法解除吗？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>是的，启用严格限制后，<strong>次日0:00（午夜）之前无法解除</strong>。这是有意设计的。</p>
+                            <p><strong>解除时间：</strong></p>
+                            <ul>
+                                <li>次日0:00（午夜）自动解除</li>
+                                <li>在此之前，即使重启设备也无法解除</li>
+                                <li>可以通过删除应用来解除，紧急情况下请删除应用</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
         </div>
-
-        <footer>
-            <h3>Support</h3>
-            <div class="footer-links">
-                <a href="https://forms.gle/PiSg2ijeV6Qvmhu69">Contact Form</a>
-                <a href="https://applimits.com/en/termsofuse">Terms of Service</a>
-                <a href="https://applimits.com/en/privacypolicy">Privacy Policy</a>
-            </div>
-        </footer>
     </div>
 
     <script>
@@ -516,7 +617,7 @@
                     const answer = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
-                    // Close all other answers (optional)
+                    // Close all other answers (optional - remove if you want multiple open)
                     /*
                     document.querySelectorAll('.faq-question').forEach(q => {
                         if (q !== this) {

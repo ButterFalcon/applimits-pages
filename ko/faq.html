@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>FAQ - Applimits</title>
+    <title>자주 묻는 질문 - Applimits</title>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -217,294 +217,395 @@
 <body>
     <div class="container">
         <header>
-            <h1>FAQ</h1>
-            <p>Help and Support for Applimits</p>
+            <h1>자주 묻는 질문</h1>
+            <p>Applimits에 대한 답변을 확인하세요</p>
         </header>
 
         <div class="content">
-            <!-- Troubleshooting -->
+            <!-- 문제 해결 -->
             <div class="category">
-                <h2 class="category-title">Troubleshooting</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Restrictions aren't working
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>⚠ iOS 26 사용자 안내</strong></p>
-                                <p>iOS 26에서 앱 사용 시간 제한(스크린 타임 앱 제한)이 정상적으로 작동하지 않는 버그가 보고되었습니다. 자세한 내용은 <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>을 참조하세요.</p>
-                                <p>이 문제가 자주 발생하는 경우, 수정될 때까지 "스케줄 제한" 또는 "지금 바로 제한"의 사용을 고려해 주세요.</p>
-                                <p>If your restrictions aren't working, please check the following:</p>
-                                <p><strong>1. (iPhone/iPad users) Disable Share Across Devices</strong></p>
-                                <ul>
-                                    <li>If Screen Time is shared across devices, Apple has reported that it may cause instability</li>
-                                    <li>We recommend disabling "Share Across Devices" in iPhone Settings → Screen Time</li>
-                                    <li>We recommend disabling "Share Across Devices" in Mac System Settings → Screen Time</li>
-                                    <li>Even if you disable this setting on iPhone, if it remains enabled on Mac, "Share Across Devices" will be re-enabled. You need to disable it on all devices.</li>
-                                </ul>
-                                <p><strong>2. (iPhone/iPad users) Verify Screen Time permissions</strong></p>
-                                <ul>
-                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimits" and verify permissions are
-                                        enabled</li>
-                                    <li>If disabled, grant permission again from the Applimits app</li>
-                                </ul>
-                                <p><strong>3. (iPhone/iPad users) MDM users</strong></p>
-                                <ul>
-                                    <li>On devices with MDM control (Google Device Policy, Intune, etc.), the MDM sync timing may cause issues with the app's time limit settings</li>
-                                    <li>If issues occur, please tap "Re-register All Schedules" in the settings screen</li>
-                                </ul>
-                                <p><strong>4. Re-register schedules</strong></p>
-                                <ul>
-                                    <li>If you changed your device's Screen Time or other settings, the app's settings may be removed</li>
-                                    <li>Please tap "Re-register All Schedules" in the settings screen to re-apply</li>
-                                </ul>
-                                <p><strong>5. Check schedule settings</strong></p>
-                                <ul>
-                                    <li>Are the target days enabled?</li>
-                                    <li>Are the time limits set correctly?</li>
-                                    <li>Is "Disable for today" enabled?</li>
-                                </ul>
-                                <p>If the problem persists, please contact us through the contact form.</p>
-                            </div>
+                <h2 class="category-title">문제 해결</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        설정한 제한이 제대로 작동하지 않습니다
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>⚠ iOS 26 사용자 안내</strong></p>
+                            <p>iOS 26에서 사용 시간 제한(앱 사용 시간 제한)이 정상적으로 작동하지 않는 버그가 보고되었습니다. 자세한 내용은 <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>을 참조하세요.</p>
+                            <p>이 문제가 자주 발생하는 경우, 수정될 때까지 "예약 제한" 또는 "지금 바로 제한"의 사용을 고려해 주세요.</p>
+                            <p>제한이 작동하지 않는 경우, 다음 사항을 확인하세요:</p>
+                            <p><strong>1. (iPhone/iPad 사용자) 기기 간 공유 비활성화</strong></p>
+                            <ul>
+                                <li>스크린 타임을 다른 기기와 공유하는 경우, 동작이 불안정해질 수 있다고 Apple이 보고하고 있습니다</li>
+                                <li>iPhone의 "설정" → "스크린 타임" → "기기 간 공유"를 비활성화하는 것을 권장합니다</li>
+                                <li>Mac의 "설정" → "스크린 타임" → "기기 간 공유"를 비활성화하는 것을 권장합니다</li>
+                                <li>iPhone 측 설정을 비활성화해도 Mac 측 설정이 활성화되어 있으면 "기기 간 공유"가 다시 활성화될 수 있으므로 모든 기기에서 비활성화하는 것을 권장합니다</li>
+                            </ul>
+                            <p><strong>2. (iPhone/iPad 사용자) Screen Time 권한 확인</strong></p>
+                            <ul>
+                                <li>iPhone의 "설정" → "스크린 타임" → "Applimits"에서 권한이 활성화되어 있는지 확인하세요</li>
+                                <li>권한이 비활성화된 경우, Applimits 앱에서 다시 허용해 주세요</li>
+                            </ul>
+                            <p><strong>3. (iPhone/iPad 사용자) MDM 사용자</strong></p>
+                            <ul>
+                                <li>Google Device Policy나 Intune 등의 기기 관리가 적용된 단말에서는 MDM 동기화 타이밍으로 인해 앱 내 사용 시간 설정에 문제가 발생할 수 있습니다</li>
+                                <li>문제가 발생한 경우, 설정 화면에서 "스케줄 재등록"을 실행해 주세요</li>
+                            </ul>
+                            <p><strong>4. 스케줄 재등록</strong></p>
+                            <ul>
+                                <li>단말의 스크린 타임이나 기타 설정을 변경한 경우, 앱 설정이 해제될 수 있습니다.</li>
+                                <li>설정 화면의 "스케줄 재등록"을 탭하여 다시 설정해 주세요</li>
+                            </ul>
+                            <p><strong>5. 스케줄 설정 확인</strong></p>
+                            <ul>
+                                <li>대상 요일이 활성화되어 있는지</li>
+                                <li>시간 제한이 0분 이외로 설정되어 있는지</li>
+                                <li>"오늘만 비활성화"가 켜져 있지 않은지</li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        OS 업데이트 후 제한이 작동하지 않습니다
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>OS 업데이트 후 제한이 작동하지 않는 경우, 다음을 시도해 주세요:</p>
+                            <p><strong>1. 기기 재시작</strong></p>
+                            <ul>
+                                <li>기기를 완전히 재시작해 주세요</li>
+                            </ul>
+                            <p><strong>2. 스케줄 재등록</strong></p>
+                            <ul>
+                                <li>Applimits 설정 화면을 열기</li>
+                                <li>"스케줄 재등록"을 탭</li>
+                                <li>모든 스케줄과 다운타임 설정이 다시 적용됩니다</li>
+                            </ul>
+                            <p><strong>3. Screen Time 권한 재확인</strong></p>
+                            <ul>
+                                <li>iPhone의 "설정" → "스크린 타임" → "Applimits"에서 권한을 확인하세요</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Restrictions stopped working after an OS update
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>If restrictions stop working after an OS update, try the following:</p>
-                                <p><strong>1. Restart your device</strong></p>
-                                <ul>
-                                    <li>Completely restart your device</li>
-                                </ul>
-                                <p><strong>2. Re-register schedules</strong></p>
-                                <ul>
-                                    <li>Open Applimits Settings screen</li>
-                                    <li>Tap "Re-register All Schedules"</li>
-                                    <li>All schedules and Downtime settings will be re-applied</li>
-                                </ul>
-                                <p><strong>3. Re-verify Screen Time permissions</strong></p>
-                                <ul>
-                                    <li>Go to iPhone "Settings" → "Screen Time" → "Applimits" and verify permissions</li>
-                                </ul>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        "스케줄 재등록"이란 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>"스케줄 재등록"은 모든 스케줄과 다운타임 설정을 다시 적용하는 기능입니다.</p>
+                            <p><strong>사용 시기:</strong></p>
+                            <ul>
+                                <li>제한이 제대로 작동하지 않는 경우</li>
+                                <li>OS 업데이트 후</li>
+                            </ul>
+                            <p><strong>실행 방법:</strong></p>
+                            <ol>
+                                <li>설정 화면을 열기</li>
+                                <li>"스케줄 재등록"을 탭</li>
+                                <li>확인 대화 상자에서 "확인"을 탭</li>
+                            </ol>
+                            <p><strong>참고:</strong> 이 작업으로 모든 스케줄과 다운타임 설정이 다시 적용됩니다. 앱 내 설정은 유지됩니다.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What does "Re-register All Schedules" do?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>"Re-register All Schedules" re-applies all schedule and Downtime settings.</p>
-                                <p><strong>When to use:</strong></p>
-                                <ul>
-                                    <li>When restrictions aren't working properly</li>
-                                    <li>After an OS update</li>
-                                </ul>
-                                <p><strong>How to do it:</strong></p>
-                                <ol>
-                                    <li>Open the Settings screen</li>
-                                    <li>Tap "Re-register All Schedules"</li>
-                                    <li>Tap "OK" in the confirmation dialog</li>
-                                </ol>
-                                <p><strong>Note:</strong> This operation re-applies all schedule and Downtime settings. Your app settings are preserved.</p>
-                            </div>
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        (iPhone/iPad) Applimits 앱이 삭제되지 않도록 할 수 있나요?
                     </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            (iPhone/iPad) Prevent app deletion
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>To prevent deleting Applimits itself, use iPhone/iPad Screen Time settings:</p>
-                                <ol>
-                                    <li>iPhone Settings > Screen Time</li>
-                                    <li>Content & Privacy Restrictions</li>
-                                    <li>iTunes & App Store Purchases</li>
-                                    <li>Set "Deleting Apps" to "Don't Allow"</li>
-                                </ol>
-                            </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>iPhone/iPad의 Screen Time 기능을 사용하여 Applimits 자체의 삭제를 방지할 수 있습니다:</p>
+                            <ol>
+                                <li>iPhone의 "설정" 앱을 열기</li>
+                                <li>"스크린 타임"을 탭</li>
+                                <li>"콘텐츠 및 개인 정보 보호 제한"을 탭</li>
+                                <li>"iTunes 및 App Store 구입"을 탭</li>
+                                <li>"앱 삭제"를 "허용 안 함"으로 설정</li>
+                            </ol>
+                            <p><strong>권장:</strong> 스크린 타임 암호를 설정하면 더 확실하게 보호할 수 있습니다. 가족이나 신뢰할 수 있는 사람에게 암호를 관리하게 하면 더욱 효과적입니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Getting Started -->
+            <!-- 시작하기 -->
             <div class="category">
-                <h2 class="category-title">Basics</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is Applimits?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Applimits is an iOS app designed to help you manage your smartphone usage and improve
-                                    focus.</p>
-                                <p><strong>Key Features:</strong></p>
-                                <ul>
-                                    <li><strong>Time Limits:</strong> Set daily usage limits for specific apps or
-                                        categories.</li>
-                                    <li><strong>Downtime:</strong> Block apps completely during specific hours (e.g.,
-                                        bedtime).</li>
-                                    <li><strong>Focus Timer:</strong> Use the Pomodoro technique to stay concentrated.
-                                    </li>
-                                    <li><strong>Hard Limitation:</strong> A powerful mode that prevents removing
-                                        restrictions until the next day.</li>
-                                </ul>
-                            </div>
+                <h2 class="category-title">시작하기</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Applimits란 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Applimits는 스마트폰 사용 시간을 관리하고 집중력을 높이기 위한 앱입니다. 특정 앱에 시간 제한을 설정하거나, 취침 시간에 앱 사용을 차단하거나, 포모도로 타이머로 작업에 집중할 수 있습니다.</p>
+                            <p><strong>주요 기능:</strong></p>
+                            <ul>
+                                <li>사용 시간 제한: 요일별로 하루 사용 시간 설정</li>
+                                <li>지금 바로 제한: 타이머 기능으로 즉시 앱 제한</li>
+                                <li>예약 제한: 앱을 사용할 수 없는 시간대 설정</li>
+                                <li>강력 제한: 제한을 즉시 해제할 수 없는 강력한 모드</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Difference between Time Limits and Downtime?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p><strong>Time Limits:</strong><br>
-                                    Limits the <em>total amount</em> of time you can use apps per day (e.g., "1 hour
-                                    total"). You can use them whenever you want until the time runs out.</p>
-                                <p><strong>Downtime:</strong><br>
-                                    Blocks apps during a <em>specific time period</em> (e.g., "10:00 PM to 7:00 AM").
-                                    Perfect for ensuring uninterrupted sleep or study time.</p>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        처음 사용할 때 무엇부터 시작하면 되나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>단계 1:</strong> 앱을 열고 화면의 안내에 따라 Screen Time(스크린 타임) 권한을 허용합니다. 이 권한은 필수입니다.</p>
+                            <p><strong>단계 2:</strong> 홈 화면의 "+" 버튼을 탭하여 새 설정을 만듭니다.</p>
+                            <p><strong>단계 3:</strong> 제한하고 싶은 앱 또는 카테고리를 선택합니다.</p>
+                            <p><strong>단계 4:</strong> 요일과 시간 제한을 설정합니다. 프리셋(평일/주말/매일)도 이용할 수 있습니다.</p>
+                            <p><strong>단계 5:</strong> "저장"을 탭하면 완료됩니다.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What's included in the free version?
+                <div class="faq-item">
+                    <div class="faq-question">
+                        스케줄과 다운타임의 차이는 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>사용 시간 제한:</strong> 특정 앱이나 카테고리에 대해 하루 사용 시간의 상한을 설정합니다. 예: "평일에는 SNS를 하루 30분까지".</p>
+                            <p><strong>예약 제한:</strong> 특정 시간대에 선택한 앱을 완전히 차단합니다. 예: "22:00~다음 날 7:00에 SNS 차단". 취침 시간 관리에 최적입니다.</p>
+                            <p><strong>주요 차이점:</strong></p>
+                            <ul>
+                                <li>스케줄: 하루 총 사용 시간을 제한</li>
+                                <li>다운타임: 특정 시간대에 완전 차단</li>
+                            </ul>
                         </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>The free version includes:</p>
-                                <ul>
-                                    <li>Time Limits: Create up to 1 limit</li>
-                                    <li>App Selection: Select up to 2 apps/categories per limit</li>
-                                    <li>Downtime: Unlimited settings</li>
-                                </ul>
-                                <p>Upgrade to Pro for unlimited limits, unlimited app selection, Focus Timer, and Hard
-                                    Limitation features.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        무료 버전과 Pro 플랜의 차이는 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>무료 버전:</strong></p>
+                            <ul>
+                                <li>스케줄: 1개까지</li>
+                                <li>강력 제한: 이용 불가</li>
+                            </ul>
+                            <p><strong>Pro 플랜:</strong></p>
+                            <ul>
+                                <li>스케줄: 최대 6개까지</li>
+                                <li>강력 제한: 이용 가능</li>
+                            </ul>
+                            <p>7일간의 무료 체험으로 Pro 기능을 사용해 보실 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Features -->
+            <!-- 사용 시간 제한 -->
             <div class="category">
-                <h2 class="category-title">Features</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is Hard Limitation?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Hard Limitation is a feature that, once enabled, <strong>cannot be disabled until the
-                                        next day</strong>.</p>
-                                <p>It prevents you from giving in to temptation and removing restrictions "just for a
-                                    minute."</p>
-                                <p><span class="highlight">Note:</span> Please be careful when enabling this. You will
-                                    not be able to change or delete the settings until tomorrow.</p>
-                            </div>
+                <h2 class="category-title">사용 시간 제한</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        사용 시간 제한은 어떻게 설정하나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>하루 앱 사용 시간을 설정할 수 있습니다.</p>
+                            <p><strong>설정 방법:</strong></p>
+                            <ul>
+                                <li>여러 앱을 선택한 경우 합산 사용 시간이 설정한 시간을 초과하면 제한이 적용됩니다</li>
+                                <li>요일별로 다른 시간 제한을 설정할 수 있습니다</li>
+                                <li>프리셋(평일/주말/매일)을 사용하면 일괄 설정이 간편합니다</li>
+                                <li>0분으로 설정하면 해당 요일에 완전히 차단됩니다</li>
+                            </ul>
+                            <p><strong>예:</strong> "월~금은 30분, 토·일은 60분"과 같은 설정이 가능합니다.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to use Focus Timer?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>The Focus Timer uses the Pomodoro technique (e.g., 25 min focus, 5 min break) to
-                                    boost productivity.</p>
-                                <ol>
-                                    <li>Go to the "Focus" tab</li>
-                                    <li>Select apps to block</li>
-                                    <li>Set the duration (15 min+)</li>
-                                    <li>Tap "Start"</li>
-                                </ol>
-                                <p>Selected apps will be blocked while the timer is running. If Hard Limitation is
-                                    enabled, you cannot stop the timer.</p>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        "오늘만 비활성화"란 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>"오늘만 비활성화" 기능을 사용하면 오늘의 제한을 해제하고 적용 시작을 다음 날부터로 설정할 수 있습니다.</p>
+                            <p><strong>사용 예:</strong></p>
+                            <ul>
+                                <li>오늘은 특별한 사정으로 앱을 사용하고 싶지만, 내일부터는 제한하고 싶은 경우</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is "Disable for today"?
+                <div class="faq-item">
+                    <div class="faq-question">
+                        시간 제한에 도달하면 어떻게 되나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>설정한 시간 제한에 도달하면 선택한 앱이나 카테고리가 자동으로 차단됩니다.</p>
+                            <p><strong>제한 중 동작:</strong></p>
+                            <ul>
+                                <li>제한된 앱을 열려고 하면 iPhone/iPad의 Screen Time 화면이 표시됩니다</li>
+                                <li>"강력 제한"을 활성화하지 않은 경우, "오늘만 비활성화"로 일시적으로 해제할 수 있습니다</li>
+                                <li>다음 날 0:00에 시간 제한이 초기화되어 다시 활성화됩니다</li>
+                            </ul>
                         </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>This feature allows you to temporarily turn off a specific limit for the rest of the
-                                    day.</p>
-                                <p>Useful if you need to use an app for an emergency. The limit will automatically
-                                    resume tomorrow.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        (iPhone/iPad) 카테고리로 제한하면 어떤 앱이 대상이 되나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>카테고리를 선택하면 해당 카테고리에 포함된 모든 앱이 자동으로 제한됩니다.</p>
+                            <p><strong>이용 가능한 카테고리 예:</strong></p>
+                            <ul>
+                                <li>소셜 네트워킹 (Twitter, Instagram, Facebook 등)</li>
+                                <li>엔터테인먼트 (YouTube, Netflix, TikTok 등)</li>
+                                <li>게임 (모든 게임 앱)</li>
+                                <li>기타 다수의 카테고리</li>
+                            </ul>
+                            <p>카테고리에 새 앱을 설치한 경우에도 자동으로 제한 대상에 포함됩니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Subscription -->
+            <!-- 예약 제한 -->
             <div class="category">
-                <h2 class="category-title">Subscription</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to restore purchases?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>If you have a Pro plan and changed devices:</p>
-                                <ol>
-                                    <li>Go to Settings</li>
-                                    <li>Tap "Upgrade to Pro"</li>
-                                    <li>Tap "Restore Purchases"</li>
-                                </ol>
-                                <p>Ensure you are signed in with the same Apple ID used for purchase.</p>
-                            </div>
+                <h2 class="category-title">예약 제한</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        예약 제한은 언제 사용하면 효과적인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>특정 시간대에 앱을 완전히 차단하는 기능입니다. 다음과 같은 상황에서 효과적입니다:</p>
+                            <p><strong>취침 시간:</strong> 22:00~다음 날 7:00에 SNS를 차단하여 수면의 질 향상</p>
+                            <p><strong>공부 시간:</strong> 19:00~21:00에 게임이나 동영상 앱을 차단</p>
+                            <p><strong>심야 대책:</strong> 0:00~6:00에 오락 앱을 차단하여 밤샘 방지</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to cancel subscription?
-                        </div>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Manage subscriptions via iPhone Settings:</p>
-                                <ol>
-                                    <li>Settings App > Tap your name at the top</li>
-                                    <li>Subscriptions</li>
-                                    <li>Select Applimits</li>
-                                    <li>Tap "Cancel Subscription"</li>
-                                </ol>
-                            </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        예약 제한은 날짜를 넘겨서 설정할 수 있나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>네, 가능합니다. 날짜를 넘기는 설정이 가능합니다.</p>
+                            <p><strong>예:</strong> "22:00~다음 날 7:00"으로 설정하면 밤 10시부터 다음 날 아침 7시까지 앱이 차단됩니다.</p>
+                            <p><strong>프리셋:</strong></p>
+                            <ul>
+                                <li>취침 시간 (22:00~다음 날 7:00)</li>
+                                <li>공부 시간 (19:00~21:00)</li>
+                                <li>심야 (0:00~6:00)</li>
+                            </ul>
+                            <p>요일별로 다른 설정을 할 수도 있습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- 지금 바로 집중 -->
+            <div class="category">
+                <h2 class="category-title">지금 바로 집중</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        지금 바로 집중이란 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>타이머 기능이나 포모도로 테크닉을 사용하여 집중력을 높이는 기능입니다.</p>
+                            <p><strong>포모도로 테크닉이란:</strong> 25분의 집중 작업과 5분의 휴식을 반복하여 높은 집중력을 유지하는 시간 관리 기법입니다.</p>
+                            <p><strong>사용 방법:</strong></p>
+                            <ol>
+                                <li>제한하고 싶은 앱을 선택</li>
+                                <li>타이머 시간을 설정 (15분, 30분, 1시간, 또는 사용자 지정)</li>
+                                <li>포모도로를 활성화</li>
+                                <li>휴식 시간을 설정</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        타이머 종료 시 알림을 받을 수 있나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>네, 타이머가 종료되면 알림이 전송됩니다 (알림 권한을 허용한 경우).</p>
+                            <p><strong>알림 내용:</strong></p>
+                            <ul>
+                                <li>타이머 종료 알림</li>
+                                <li>설정한 휴식 시간의 시작</li>
+                            </ul>
+                            <p><strong>참고:</strong> 알림 권한은 선택 사항이지만, 허용하지 않으면 타이머 종료 알림을 받을 수 없습니다. 최초 실행 시 또는 설정 화면에서 알림 권한을 허용하는 것을 권장합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 강력 제한 -->
+            <div class="category">
+                <h2 class="category-title">강력 제한</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        강력 제한이란 무엇인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>강력 제한은 한 번 활성화하면 <strong>다음 날 0:00까지 비활성화할 수 없는</strong> 강력한 제한 기능입니다 (Pro 플랜 전용).</p>
+                            <p><strong>특징:</strong></p>
+                            <ul>
+                                <li>활성화하면 다음 날 0:00까지 설정을 변경하거나 삭제할 수 없습니다</li>
+                                <li>스케줄, 집중 타이머, 다운타임에서 이용 가능</li>
+                                <li>자제력을 강화하고 유혹에 지지 않는 환경을 만듭니다</li>
+                            </ul>
+                            <p><span class="highlight">주의:</span> 강력 제한을 활성화하기 전에 설정 내용을 충분히 확인하세요. 한 번 활성화하면 해제할 수 없습니다. (부득이하게 해제가 필요한 경우 앱을 삭제해 주세요.)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        강력 제한은 정말로 해제할 수 없나요?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>네, 강력 제한을 활성화하면 <strong>다음 날 0:00(자정)까지 해제할 수 없습니다</strong>. 이것은 의도적인 설계입니다.</p>
+                            <p><strong>해제되는 시점:</strong></p>
+                            <ul>
+                                <li>다음 날 0:00(자정)에 자동으로 해제됩니다</li>
+                                <li>그때까지는 기기를 재시작해도 해제할 수 없습니다</li>
+                                <li>앱을 삭제하면 해제할 수 있으므로 긴급 시에는 앱을 삭제해 주세요</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
         </div>
-
-        <footer>
-            <h3>Support</h3>
-            <div class="footer-links">
-                <a href="https://forms.gle/PiSg2ijeV6Qvmhu69">Contact Form</a>
-                <a href="https://applimits.com/en/termsofuse">Terms of Service</a>
-                <a href="https://applimits.com/en/privacypolicy">Privacy Policy</a>
-            </div>
-        </footer>
     </div>
 
     <script>
@@ -516,7 +617,7 @@
                     const answer = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
-                    // Close all other answers (optional)
+                    // Close all other answers (optional - remove if you want multiple open)
                     /*
                     document.querySelectorAll('.faq-question').forEach(q => {
                         if (q !== this) {
