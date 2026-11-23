@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppLimit Privacy Policy</title>
+    <title>Applimits Privacy Policy</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>AppLimit Privacy Policy</h1>
+            <h1>Applimits Privacy Policy</h1>
         </header>
 
         <main>
-            <p>ButterFalcon ("we," "our," or "us") sets out this Privacy Policy to explain how user data is handled in the AppLimit mobile application (the "App").</p>
+            <p>ButterFalcon ("we," "our," or "us") sets out this Privacy Policy to explain how user data is handled in the Applimits mobile application (the "App").</p>
 
             <section>
                 <h2>1. Data Handled by the App</h2>
@@ -21,20 +21,21 @@
                 <h3>1.1 Data Handled on Your Device</h3>
                 <p>To provide app usage management, limits, schedules, downtime, and focus timers, the App accesses and generally stores the following data only on your device:</p>
                 <ul>
-                    <li>Names, icons, and package identifiers of installed apps</li>
-                    <li>App usage dates, times, durations, and the package identifier of the app currently in the foreground</li>
+                    <li>On Android, names, icons, and package identifiers of installed apps; on iOS, Screen Time selections for apps, categories, and websites</li>
+                    <li>App usage dates, times, and durations, plus the foreground app's package identifier and time spent per website domain on Android</li>
                     <li>Usage limits, schedules, downtime, focus timers, profiles, and related settings you create</li>
                     <li>Your in-app passcode and configuration state</li>
                 </ul>
-                <p>On Android, the App uses Usage Access permission and an Accessibility Service solely to identify the app currently in use and apply limits you have configured. The Accessibility Service does not collect text you enter, messages, passwords, screen contents, or other content within apps.</p>
-                <p>This on-device data, including individual app usage history and package identifiers, is not sent to Firebase Analytics, Firebase Crashlytics, or RevenueCat.</p>
+                <p>On iOS, with your authorization, the App uses Apple's Screen Time APIs (Family Controls, Device Activity, and Managed Settings) to process activity for selected apps, categories, and websites on your device and apply your limits.</p>
+                <p>On Android, the App uses Usage Access permission to measure time spent in apps. When enabled by you, its Accessibility Service identifies the foreground app and applies limits, including while the App is in the background. In supported browsers, it reads the text displayed in the address bar (such as a URL) to identify the domain, measure time spent, and enforce website limits. URLs read by the App may appear in on-device diagnostic logs. It does not target messages, passwords, or the contents of web pages. If you enable uninstall protection, the App uses device administrator permission and its Accessibility Service detects certain Android settings screens. You can manage these permissions in your device settings.</p>
+                <p>Individual app usage history, URLs read from the browser, and per-domain usage time are processed on your device to provide these features and are not sent as analytics events or purchase data.</p>
 
                 <h3>1.2 Data Collected or Processed by Us and Our Service Providers</h3>
                 <ul>
                     <li><strong>Usage analytics:</strong> Through Firebase Analytics, provided by Google LLC, we process events such as screen views, feature use, permission results, language, purchase events, coarse ranges of the number of configured limits, and premium status. Firebase may also process app version, device type, OS version, Firebase installation identifiers, and approximate region derived from an IP address. We do not collect advertising IDs or set a name, email address, or other ID that directly identifies you in Analytics.</li>
                     <li><strong>Crash diagnostics:</strong> Through Firebase Crashlytics, provided by Google LLC, we process crashes and non-fatal errors, stack traces, timestamps, app version, device model, OS, memory and storage diagnostics, Firebase installation identifiers, and Crashlytics installation identifiers.</li>
                     <li><strong>Purchases and subscriptions:</strong> Through RevenueCat, Inc., we process an anonymous App User ID, product IDs, purchase receipts and transaction information, purchase history, and subscription status. Apple or Google processes payments; we do not receive your credit card or bank account number.</li>
-                    <li><strong>Support inquiries:</strong> We process information you voluntarily provide when contacting us, such as your name, email address, order number, inquiry details, and attachments.</li>
+                    <li><strong>Support inquiries:</strong> We process information you voluntarily provide when contacting us, such as your name, email address, order number, inquiry details, and attachments. The in-app support form uses Google Forms.</li>
                 </ul>
                 <p>The App does not provide user account creation or sign-in.</p>
             </section>
@@ -57,6 +58,7 @@
                 <p>We engage the following service providers to process data only as necessary for the purposes above:</p>
                 <ul>
                     <li><a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Google LLC (Firebase Analytics and Firebase Crashlytics)</a></li>
+                    <li><a href="https://policies.google.com/privacy?hl=en" rel="noopener noreferrer">Google LLC (support inquiries via Google Forms)</a></li>
                     <li><a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">RevenueCat, Inc. (purchase and subscription management)</a></li>
                     <li>Apple Inc. or Google LLC (app distribution and payment processing)</li>
                 </ul>
@@ -78,7 +80,7 @@
 
             <section>
                 <h2>5. Your Deletion Options and Rights</h2>
-                <p>The App does not create user accounts. You can delete on-device data using the relevant delete or reset features in the App, your device's "clear storage" feature, or by uninstalling the App.</p>
+                <p>The App does not create user accounts. Depending on the type of data, you can remove on-device data using the relevant delete or reset feature in the App, Android's Clear storage feature, or by deleting the App. Usage data and protected storage maintained by the operating system are handled according to the operating system's behavior.</p>
                 <p>To request access, correction, deletion, restriction, or exercise another right available under applicable law for data held by us or our service providers, contact us using the details below. We may ask for information that allows us to identify the relevant purchase, such as a Google Play order number. After verification, we will respond within a reasonable period and delete the data unless its retention is required by law.</p>
             </section>
 
@@ -89,7 +91,7 @@
 
             <section>
                 <h2>7. International Processing</h2>
-                <p>Because we use Firebase and RevenueCat, data may be processed outside your country of residence, including in the United States. We use safeguards required by applicable law and our agreements with these service providers.</p>
+                <p>Because we use Firebase, RevenueCat, and Google Forms, data may be processed outside your country of residence, including in the United States. We use safeguards required by applicable law and our agreements with these service providers.</p>
             </section>
 
             <section>
@@ -107,14 +109,14 @@
                 <p>For questions about this Policy, our data practices, or a deletion request, contact:</p>
                 <ul>
                     <li>Developer: ButterFalcon</li>
-                    <li>App: AppLimit</li>
+                    <li>App: Applimits</li>
                     <li>Email: <a href="mailto:contact@butterfalcon.com">contact@butterfalcon.com</a></li>
                 </ul>
             </section>
         </main>
 
         <footer>
-            <p>Effective: March 8, 2025<br>Last updated: July 20, 2026</p>
+            <p>Effective: March 8, 2025<br>Last updated: November 23, 2026</p>
         </footer>
     </div>
 </body>
