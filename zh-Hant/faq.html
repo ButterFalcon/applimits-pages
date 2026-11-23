@@ -222,7 +222,6 @@
         </header>
 
         <div class="content">
-            <!-- 疑難排解 -->
             <div class="category">
                 <h2 class="category-title">疑難排解</h2>
 
@@ -232,39 +231,10 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>⚠ iOS 26 使用者須知</strong></p>
-                            <p>iOS 26 中存在使用時間限制（螢幕使用時間的App限額）無法正常運作的問題。詳情請參閱 <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>。</p>
-                            <p>如果此問題頻繁出現，請在修復前考慮使用「排程限制」或「立即限制」作為替代方案。</p>
-                            <p>如果限制無法正常運作，請檢查以下事項：</p>
-                            <p><strong>1.（iPhone/iPad 使用者）關閉跨裝置共享</strong></p>
-                            <ul>
-                                <li>Apple 已報告，跨裝置共享螢幕使用時間可能導致不穩定</li>
-                                <li>建議在 iPhone 的「設定」→「螢幕使用時間」→「跨裝置共享」中關閉此功能</li>
-                                <li>建議在 Mac 的「設定」→「螢幕使用時間」→「跨裝置共享」中關閉此功能</li>
-                                <li>即使在 iPhone 上關閉此設定，如果 Mac 上仍然啟用，「跨裝置共享」可能會重新啟用。建議在所有裝置上關閉</li>
-                            </ul>
-                            <p><strong>2.（iPhone/iPad 使用者）檢查 Screen Time 權限</strong></p>
-                            <ul>
-                                <li>前往 iPhone 的「設定」→「螢幕使用時間」→「Applimits」，確認權限已啟用</li>
-                                <li>如果權限已關閉，請從 Applimits 應用程式重新授權</li>
-                            </ul>
-                            <p><strong>3.（iPhone/iPad 使用者）MDM 使用者</strong></p>
-                            <ul>
-                                <li>在使用 Google Device Policy 或 Intune 等 MDM 管理的裝置上，MDM 同步時可能導致應用程式內的使用時間設定出現問題</li>
-                                <li>如果出現問題，請在設定畫面執行「重新註冊排程」</li>
-                            </ul>
-                            <p><strong>4. 重新註冊排程</strong></p>
-                            <ul>
-                                <li>如果變更了裝置的螢幕使用時間或其他設定，應用程式的設定可能會被解除。</li>
-                                <li>請在設定畫面點擊「重新註冊排程」以重新套用設定</li>
-                            </ul>
-                            <p><strong>5. 檢查排程設定</strong></p>
-                            <ul>
-                                <li>目標星期幾是否已啟用？</li>
-                                <li>時間限制是否設定為非0分鐘？</li>
-                                <li>「僅今天停用」是否已開啟？</li>
-                            </ul>
-                       </div>
+                            <p>部分 iOS 26 版本可能會提早觸發使用限制。此問題在 iOS 和 iPadOS 27.2.1 已獲改善。請透過「設定」→「一般」→「軟體更新」，安裝 27.2.1 或更新版本。如果未顯示該版本，請安裝裝置可用的最新更新。</p>
+                            <p><a href="https://support.apple.com/zh-tw/118575" style="color: var(--primary-color);">如何更新 iPhone 或 iPad</a></p>
+                            <p>更新後若仍有問題，請檢查目標 App、星期、時段及「僅今天停用」設定。在 iPhone 或 iPad 上，請允許 Applimits 取用螢幕使用時間。如果啟用了跨裝置共享，請在受影響的裝置上暫時關閉，再重新設定使用限制。在 Android 上，請檢查使用情況存取權及 Applimits 無障礙服務。</p>
+                        </div>
                     </div>
                 </div>
 
@@ -274,44 +244,18 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>如果 OS 更新後限制不再生效，請嘗試以下操作：</p>
-                            <p><strong>1. 重新啟動裝置</strong></p>
-                            <ul>
-                                <li>請完全重新啟動您的裝置</li>
-                            </ul>
-                            <p><strong>2. 重新註冊排程</strong></p>
-                            <ul>
-                                <li>開啟 Applimits 的設定畫面</li>
-                                <li>點擊「重新註冊排程」</li>
-                                <li>所有排程和停用時間設定將被重新套用</li>
-                            </ul>
-                            <p><strong>3. 重新確認 Screen Time 權限</strong></p>
-                            <ul>
-                                <li>前往 iPhone 的「設定」→「螢幕使用時間」→「Applimits」確認權限</li>
-                            </ul>
+                            <p>重新啟動裝置，開啟 Applimits 並檢查權限。開啟受影響的限制，檢查目標 App、星期和時間，再重新儲存。</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        什麼是「重新註冊排程」？
+                        如何回報限制異常？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>「重新註冊排程」是一個重新套用所有排程和停用時間設定的功能。</p>
-                            <p><strong>使用時機：</strong></p>
-                            <ul>
-                                <li>限制無法正常運作時</li>
-                                <li>OS 更新後</li>
-                            </ul>
-                            <p><strong>執行方法：</strong></p>
-                            <ol>
-                                <li>開啟設定畫面</li>
-                                <li>點擊「重新註冊排程」</li>
-                                <li>在確認對話框中點擊「確定」</li>
-                            </ol>
-                            <p><strong>注意：</strong> 此操作將重新套用所有排程和停用時間設定。應用程式內的設定將被保留。</p>
+                            <p>在 Applimits 中開啟「設定」→「聯絡我們」。請提供裝置型號、系統和 Applimits 版本、重現步驟，以及受影響的使用限制或排程限制的設定截圖。</p>
                         </div>
                     </div>
                 </div>
@@ -322,21 +266,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>您可以使用 iPhone/iPad 的 Screen Time 功能來防止 Applimits 被刪除：</p>
-                            <ol>
-                                <li>開啟 iPhone 的「設定」應用程式</li>
-                                <li>點擊「螢幕使用時間」</li>
-                                <li>點擊「內容與隱私權限制」</li>
-                                <li>點擊「iTunes 與 App Store 購買」</li>
-                                <li>將「刪除 App」設定為「不允許」</li>
-                            </ol>
-                            <p><strong>建議：</strong> 設定螢幕使用時間密碼可以提供更可靠的保護。讓家人或信任的人管理密碼會更加有效。</p>
+                            <p>請在 Applimits 設定中查看防止解除安裝的功能，依裝置指示操作。在 iPhone 或 iPad 上，透過螢幕使用時間禁止刪除 App 會套用到整部裝置。可設定螢幕使用時間密碼來保護此設定。. 在較舊的系統版本上，禁止刪除 App 會套用到整部裝置。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 入門基礎 -->
             <div class="category">
                 <h2 class="category-title">入門基礎</h2>
 
@@ -346,14 +281,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Applimits 是一款幫助您管理智慧型手機使用時間並保持專注的應用程式。您可以為特定應用程式設定時間限制，在就寢時間阻止應用程式使用，還可以使用番茄鐘專注於工作。</p>
-                            <p><strong>主要功能：</strong></p>
-                            <ul>
-                                <li>使用時間限制：按星期幾設定每日使用時間</li>
-                                <li>立即限制：使用計時器功能立即限制應用程式</li>
-                                <li>排程限制：設定不能使用應用程式的時間段</li>
-                                <li>嚴格限制：無法立即解除限制的強力模式</li>
-                            </ul>
+                            <p>Applimits 可查看 App 使用時間、設定每日使用限制、依時段阻擋 App，以及透過專注計時器暫時限制 App。</p>
                         </div>
                     </div>
                 </div>
@@ -364,28 +292,20 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>步驟1：</strong> 開啟應用程式，按照螢幕指示授權 Screen Time（螢幕使用時間）權限。此權限為必需。</p>
-                            <p><strong>步驟2：</strong> 點擊主畫面上的「+」按鈕建立新設定。</p>
-                            <p><strong>步驟3：</strong> 選擇要限制的應用程式或類別。</p>
-                            <p><strong>步驟4：</strong> 設定星期幾和時間限制。也可以使用預設（工作日/週末/每天）。</p>
-                            <p><strong>步驟5：</strong> 點擊「儲存」即可完成。</p>
+                            <p>請依 App 內指示設定權限。在 iPhone 或 iPad 上允許取用螢幕使用時間。在 Android 上允許使用情況存取並啟用 Applimits 無障礙服務。</p>
+                            <p>新增使用限制、選擇 App 及生效的星期，設定每日時長後儲存。</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Schedule 和 Downtime 有什麼區別？
+                        使用限制和排程限制有什麼差別？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>使用時間限制：</strong> 為特定應用程式或類別設定每日使用時間上限。例如：「工作日限制社群媒體每天30分鐘」。</p>
-                            <p><strong>排程限制：</strong> 在特定時間段內完全阻止所選應用程式。例如：「22:00～隔日7:00阻止社群媒體」。非常適合管理就寢時間。</p>
-                            <p><strong>主要區別：</strong></p>
-                            <ul>
-                                <li>Schedule：限制每日總使用時間</li>
-                                <li>Downtime：在特定時間段內完全阻止</li>
-                            </ul>
+                            <p>使用限制會設定每日可用時間，例如平日社群 App 合計最多 30 分鐘。</p>
+                            <p>排程限制會在指定時段阻擋所選 App，例如 22:00 到隔天 7:00。</p>
                         </div>
                     </div>
                 </div>
@@ -396,23 +316,13 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>免費版：</strong></p>
-                            <ul>
-                                <li>排程：最多1個</li>
-                                <li>嚴格限制：不可用</li>
-                            </ul>
-                            <p><strong>Pro 版：</strong></p>
-                            <ul>
-                                <li>排程：最多6個</li>
-                                <li>嚴格限制：可用</li>
-                            </ul>
-                            <p>可透過7天免費試用體驗 Pro 功能。</p>
+                            <p>免費版可建立 1 項使用限制，Applimits Pro 最多可建立 6 項。Pro 也提供嚴格限制等功能。</p>
+                            <p>價格、試用有無及相關條件請以 App 內購買畫面為準。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 使用時間限制 -->
             <div class="category">
                 <h2 class="category-title">使用時間限制</h2>
 
@@ -422,15 +332,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>您可以設定每日應用程式使用時間。</p>
-                            <p><strong>設定方法：</strong></p>
-                            <ul>
-                                <li>如果選擇了多個應用程式，當合計使用時間超過設定時間時將觸發限制</li>
-                                <li>可以為每個星期幾設定不同的時間限制</li>
-                                <li>使用預設（工作日/週末/每天）可以輕鬆批量設定</li>
-                                <li>設定為0分鐘時，該日將完全阻止應用程式</li>
-                            </ul>
-                            <p><strong>範例：</strong> 可以設定「週一至週五30分鐘，週六週日60分鐘」。</p>
+                            <p>在「使用限制」中選擇 App 並設定每天的時長。同一項限制包含多個 App 時，使用時間會合併計算。</p>
                         </div>
                     </div>
                 </div>
@@ -456,13 +358,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>當達到設定的時間限制時，所選的應用程式或類別將被自動阻止。</p>
-                            <p><strong>限制期間的行為：</strong></p>
-                            <ul>
-                                <li>嘗試開啟被限制的應用程式時，將顯示 iPhone/iPad 的 Screen Time 畫面</li>
-                                <li>如果未啟用「嚴格限制」，可以透過「僅今天停用」暫時解除</li>
-                                <li>隔日0:00時間限制將重置並重新生效</li>
-                            </ul>
+                            <p>達到上限後，開啟受限 App 時會顯示阻擋畫面。使用時間會在午夜重設，並套用新一天的設定。若可使用「僅今天停用」，可暫停當天的限制。</p>
                         </div>
                     </div>
                 </div>
@@ -473,21 +369,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>選擇類別後，該類別中的所有應用程式將被自動限制。</p>
-                            <p><strong>可用類別範例：</strong></p>
-                            <ul>
-                                <li>社群網路（Twitter、Instagram、Facebook 等）</li>
-                                <li>娛樂（YouTube、Netflix、TikTok 等）</li>
-                                <li>遊戲（所有遊戲應用程式）</li>
-                                <li>其他眾多類別</li>
-                            </ul>
-                            <p>在類別中安裝新應用程式時，也會自動納入限制範圍。</p>
+                            <p>限制套用到 Apple 螢幕使用時間中所選類別的 App。如果只想限制特定 App，請逐一選擇。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 排程限制 -->
             <div class="category">
                 <h2 class="category-title">排程限制</h2>
 
@@ -511,39 +398,22 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>是的，可以。支援跨越午夜的設定。</p>
-                            <p><strong>範例：</strong> 設定「22:00～隔日7:00」後，應用程式將從晚上10點阻止到隔日早上7點。</p>
-                            <p><strong>預設：</strong></p>
-                            <ul>
-                                <li>就寢時間（22:00～隔日7:00）</li>
-                                <li>學習時間（19:00～21:00）</li>
-                                <li>深夜（0:00～6:00）</li>
-                            </ul>
-                            <p>也可以為每個星期幾設定不同的配置。</p>
+                            <p>可以。例如設定 22:00 到 7:00，限制會從開始日 22:00 持續到隔天 7:00。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 立即專注 -->
             <div class="category">
-                <h2 class="category-title">立即專注</h2>
+                <h2 class="category-title">專注計時器</h2>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        什麼是立即專注？
+                        什麼是專注計時器？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>這是使用計時器功能和番茄工作法來提高專注力的功能。</p>
-                            <p><strong>什麼是番茄工作法：</strong> 透過交替進行25分鐘專注工作和5分鐘休息來保持高度專注的時間管理方法。</p>
-                            <p><strong>使用方法：</strong></p>
-                            <ol>
-                                <li>選擇要限制的應用程式</li>
-                                <li>設定計時器時間（15分鐘、30分鐘、1小時或自訂）</li>
-                                <li>啟用番茄鐘</li>
-                                <li>設定休息時間</li>
-                            </ol>
+                            <p>它會立即在指定時間內限制所選 App。選好 App 和專注時長後啟動計時器。使用番茄鐘可交替安排專注和休息。</p>
                         </div>
                     </div>
                 </div>
@@ -554,19 +424,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>是的，計時器結束時會收到通知（需要授權通知權限）。</p>
-                            <p><strong>通知內容：</strong></p>
-                            <ul>
-                                <li>計時器結束通知</li>
-                                <li>設定的休息時間開始</li>
-                            </ul>
-                            <p><strong>注意：</strong> 通知權限為可選項，但如果不授權，將無法收到計時器結束通知。建議在首次啟動時或從設定畫面授權通知權限。</p>
+                            <p>在計時器設定中開啟通知，並在裝置設定中允許 Applimits 通知，即可在計時器結束時收到提示。</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 嚴格限制 -->
             <div class="category">
                 <h2 class="category-title">嚴格限制</h2>
 
@@ -576,35 +439,22 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>嚴格限制是一旦啟用就<strong>無法在隔日0:00之前停用</strong>的強力限制功能（僅限 Pro 版）。</p>
-                            <p><strong>特點：</strong></p>
-                            <ul>
-                                <li>啟用後，隔日0:00之前無法變更或刪除設定</li>
-                                <li>可用於排程、專注計時器和停用時間</li>
-                                <li>增強自制力，創造不受誘惑的環境</li>
-                            </ul>
-                            <p><span class="highlight">注意：</span> 啟用嚴格限制前請仔細確認設定內容。一旦啟用將無法撤銷。（如確實需要解除，請刪除應用程式。）</p>
+                            <p>Applimits Pro 的嚴格限制會限制修改使用限制和排程限制。可使用倒數計時指定結束日期與時間。計時器也有防止運作期間停止的選項。</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        嚴格限制真的無法解除嗎？
+                        使用嚴格限制後，何時可以再次修改設定？
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>是的，啟用嚴格限制後，<strong>隔日0:00（午夜）之前無法解除</strong>。這是有意設計的。</p>
-                            <p><strong>解除時間：</strong></p>
-                            <ul>
-                                <li>隔日0:00（午夜）自動解除</li>
-                                <li>在此之前，即使重新啟動裝置也無法解除</li>
-                                <li>可以透過刪除應用程式來解除，緊急情況下請刪除應用程式</li>
-                            </ul>
+                            <p>視模式和設定而定。倒數計時會在指定結束時間解除鎖定。提早關閉後，設定仍可能鎖定到 App 顯示的時間，例如午夜。</p>
                         </div>
                     </div>
+                </div>
             </div>
-
         </div>
     </div>
 

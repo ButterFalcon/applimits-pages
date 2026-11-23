@@ -222,7 +222,6 @@
         </header>
 
         <div class="content">
-            <!-- Fehlerbehebung -->
             <div class="category">
                 <h2 class="category-title">Fehlerbehebung</h2>
 
@@ -232,39 +231,10 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>⚠ Für iOS 26 Nutzer</strong></p>
-                            <p>In iOS 26 wurde ein Fehler gemeldet, bei dem Nutzungszeitbeschränkungen (Bildschirmzeit-App-Limits) nicht korrekt funktionieren. Weitere Informationen finden Sie im <a href="https://developer.apple.com/forums/thread/808470" style="color: var(--primary-color);">Apple Developer Forum</a>.</p>
-                            <p>Falls dieses Problem häufig auftritt, erwägen Sie bitte die Verwendung von „Geplante Beschränkung" oder „Jetzt beschränken", bis der Fehler behoben ist.</p>
-                            <p>Wenn Beschränkungen nicht funktionieren, überprüfen Sie bitte Folgendes:</p>
-                            <p><strong>1. (iPhone/iPad-Nutzer) Geräteübergreifende Freigabe deaktivieren</strong></p>
-                            <ul>
-                                <li>Apple hat berichtet, dass die geräteübergreifende Freigabe der Bildschirmzeit zu Instabilität führen kann</li>
-                                <li>Wir empfehlen, „Geräteübergreifend teilen" in den iPhone-Einstellungen → Bildschirmzeit zu deaktivieren</li>
-                                <li>Wir empfehlen, „Geräteübergreifend teilen" in den Mac-Einstellungen → Bildschirmzeit zu deaktivieren</li>
-                                <li>Selbst wenn Sie die Einstellung auf dem iPhone deaktivieren, kann „Geräteübergreifend teilen" wieder aktiviert werden, wenn sie auf dem Mac noch aktiv ist. Wir empfehlen, sie auf allen Geräten zu deaktivieren</li>
-                            </ul>
-                            <p><strong>2. (iPhone/iPad-Nutzer) Screen Time-Berechtigungen überprüfen</strong></p>
-                            <ul>
-                                <li>Gehen Sie zu iPhone-Einstellungen → Bildschirmzeit → Applimits und überprüfen Sie, ob die Berechtigungen aktiviert sind</li>
-                                <li>Falls die Berechtigungen deaktiviert sind, erteilen Sie sie bitte erneut über die Applimits-App</li>
-                            </ul>
-                            <p><strong>3. (iPhone/iPad-Nutzer) Für MDM-Nutzer</strong></p>
-                            <ul>
-                                <li>Auf Geräten, die von MDM wie Google Device Policy oder Intune verwaltet werden, kann die MDM-Synchronisation zu Problemen mit den Nutzungszeiteinstellungen in der App führen</li>
-                                <li>Falls Probleme auftreten, führen Sie bitte „Zeitpläne neu registrieren" im Einstellungsbildschirm aus</li>
-                            </ul>
-                            <p><strong>4. Zeitpläne neu registrieren</strong></p>
-                            <ul>
-                                <li>Wenn Sie die Bildschirmzeit oder andere Einstellungen Ihres Geräts ändern, können die App-Einstellungen aufgehoben werden.</li>
-                                <li>Tippen Sie bitte auf „Zeitpläne neu registrieren" im Einstellungsbildschirm, um Ihre Einstellungen erneut anzuwenden</li>
-                            </ul>
-                            <p><strong>5. Zeitplan-Einstellungen überprüfen</strong></p>
-                            <ul>
-                                <li>Sind die Ziel-Wochentage aktiviert?</li>
-                                <li>Ist das Zeitlimit auf einen anderen Wert als 0 Minuten eingestellt?</li>
-                                <li>Ist „Nur heute deaktivieren" eingeschaltet?</li>
-                            </ul>
-                       </div>
+                            <p>Unter einigen Versionen von iOS 26 wurden Nutzungslimits zu früh ausgelöst. Unter iOS und iPadOS 27.2.1 hat sich das Problem verbessert. Aktualisiere unter Einstellungen → Allgemein → Softwareupdate auf 27.2.1 oder neuer. Wenn die Version nicht angezeigt wird, installiere das neueste Update für dein Gerät.</p>
+                            <p><a href="https://support.apple.com/de-de/118575" style="color: var(--primary-color);">So aktualisierst du dein iPhone oder iPad</a></p>
+                            <p>Falls das Problem bleibt, prüfe Apps, Tage, Uhrzeiten und die Option zum Deaktivieren für heute. Erlaube Applimits auf dem iPhone oder iPad den Zugriff auf die Bildschirmzeit. Wenn du die Bildschirmzeit geräteübergreifend teilst, deaktiviere die Freigabe vorübergehend auf dem betroffenen Gerät und richte das Limit erneut ein. Prüfe unter Android den Nutzungszugriff und den Bedienungshilfedienst von Applimits.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -274,44 +244,18 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Wenn Beschränkungen nach einem OS-Update nicht mehr funktionieren, versuchen Sie bitte Folgendes:</p>
-                            <p><strong>1. Gerät neu starten</strong></p>
-                            <ul>
-                                <li>Starten Sie Ihr Gerät vollständig neu</li>
-                            </ul>
-                            <p><strong>2. Zeitpläne neu registrieren</strong></p>
-                            <ul>
-                                <li>Öffnen Sie den Einstellungsbildschirm von Applimits</li>
-                                <li>Tippen Sie auf „Zeitpläne neu registrieren"</li>
-                                <li>Alle Zeitpläne und Auszeit-Einstellungen werden erneut angewendet</li>
-                            </ul>
-                            <p><strong>3. Screen Time-Berechtigungen erneut überprüfen</strong></p>
-                            <ul>
-                                <li>Gehen Sie zu iPhone-Einstellungen → Bildschirmzeit → Applimits und überprüfen Sie die Berechtigungen</li>
-                            </ul>
+                            <p>Starte dein Gerät neu, öffne Applimits und prüfe die Berechtigungen. Öffne die betroffene Beschränkung, prüfe Apps, Tage und Uhrzeiten und speichere sie erneut.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Was bedeutet „Zeitpläne neu registrieren"?
+                        Wie melde ich ein Problem mit einer Beschränkung?
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>„Zeitpläne neu registrieren" ist eine Funktion, die alle Zeitplan- und Auszeit-Einstellungen erneut anwendet.</p>
-                            <p><strong>Wann verwenden:</strong></p>
-                            <ul>
-                                <li>Wenn Beschränkungen nicht richtig funktionieren</li>
-                                <li>Nach einem OS-Update</li>
-                            </ul>
-                            <p><strong>So führen Sie es aus:</strong></p>
-                            <ol>
-                                <li>Öffnen Sie den Einstellungsbildschirm</li>
-                                <li>Tippen Sie auf „Zeitpläne neu registrieren"</li>
-                                <li>Tippen Sie im Bestätigungsdialog auf „OK"</li>
-                            </ol>
-                            <p><strong>Hinweis:</strong> Dieser Vorgang wendet alle Zeitplan- und Auszeit-Einstellungen erneut an. Ihre In-App-Einstellungen bleiben erhalten.</p>
+                            <p>Öffne in Applimits Einstellungen → Kontakt. Gib dein Gerätemodell, die Versionen des Betriebssystems und von Applimits sowie die Schritte zum Nachstellen an. Füge einen Screenshot der Einstellungen der betroffenen Beschränkung hinzu.</p>
                         </div>
                     </div>
                 </div>
@@ -322,21 +266,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Sie können die Screen Time-Funktion des iPhone/iPad verwenden, um das Löschen von Applimits zu verhindern:</p>
-                            <ol>
-                                <li>Öffnen Sie die „Einstellungen"-App auf Ihrem iPhone</li>
-                                <li>Tippen Sie auf „Bildschirmzeit"</li>
-                                <li>Tippen Sie auf „Beschränkungen"</li>
-                                <li>Tippen Sie auf „Käufe im iTunes & App Store"</li>
-                                <li>Setzen Sie „Apps löschen" auf „Nicht erlauben"</li>
-                            </ol>
-                            <p><strong>Empfehlung:</strong> Das Festlegen eines Bildschirmzeit-Codes bietet einen stärkeren Schutz. Es ist noch effektiver, wenn ein Familienmitglied oder eine vertrauenswürdige Person den Code verwaltet.</p>
+                            <p>Die Anleitung für dein Gerät findest du in Applimits unter Einstellungen beim Deinstallationsschutz. Bei älteren Systemversionen gilt die Sperre für das ganze Gerät.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Erste Schritte -->
             <div class="category">
                 <h2 class="category-title">Erste Schritte</h2>
 
@@ -346,14 +281,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Applimits ist eine App zur Verwaltung Ihrer Smartphone-Nutzungszeit und zur Steigerung Ihrer Konzentration. Sie können Zeitlimits für bestimmte Apps festlegen, die App-Nutzung zur Schlafenszeit blockieren und sich mit einem Pomodoro-Timer auf Ihre Arbeit konzentrieren.</p>
-                            <p><strong>Hauptfunktionen:</strong></p>
-                            <ul>
-                                <li>Nutzungszeitlimit: Tägliche Nutzungszeit nach Wochentag einstellen</li>
-                                <li>Jetzt beschränken: Apps sofort mit einem Timer beschränken</li>
-                                <li>Geplante Beschränkung: Zeiträume festlegen, in denen Apps nicht genutzt werden können</li>
-                                <li>Strenge Beschränkung: Ein leistungsstarker Modus, der die sofortige Aufhebung von Beschränkungen verhindert</li>
-                            </ul>
+                            <p>Mit Applimits kannst du die App-Nutzung verfolgen, tägliche Limits setzen, Apps zu bestimmten Zeiten sperren und sie mit dem Fokus-Timer vorübergehend beschränken.</p>
                         </div>
                     </div>
                 </div>
@@ -364,28 +292,20 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>Schritt 1:</strong> Öffnen Sie die App und folgen Sie den Bildschirmanweisungen, um die Screen Time (Bildschirmzeit)-Berechtigungen zu erteilen. Diese Berechtigung ist erforderlich.</p>
-                            <p><strong>Schritt 2:</strong> Tippen Sie auf die „+"-Schaltfläche auf dem Startbildschirm, um eine neue Einstellung zu erstellen.</p>
-                            <p><strong>Schritt 3:</strong> Wählen Sie die Apps oder Kategorien aus, die Sie beschränken möchten.</p>
-                            <p><strong>Schritt 4:</strong> Legen Sie die Wochentage und Zeitlimits fest. Sie können auch Voreinstellungen (Werktage/Wochenende/Jeden Tag) verwenden.</p>
-                            <p><strong>Schritt 5:</strong> Tippen Sie auf „Speichern" und Sie sind fertig.</p>
+                            <p>Folge den Hinweisen in der App. Erlaube auf dem iPhone oder iPad den Zugriff auf die Bildschirmzeit. Prüfe unter Android den Nutzungszugriff und aktiviere den Bedienungshilfedienst von Applimits.</p>
+                            <p>Füge ein Nutzungslimit hinzu, wähle Apps und Wochentage aus, lege die täglichen Limits fest und speichere.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Was ist der Unterschied zwischen Schedule und Downtime?
+                        Was unterscheidet Nutzungslimits von geplanten Beschränkungen?
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>Nutzungszeitlimit:</strong> Legt eine maximale tägliche Nutzungszeit für bestimmte Apps oder Kategorien fest. Beispiel: „Social Media an Werktagen auf 30 Minuten pro Tag begrenzen".</p>
-                            <p><strong>Geplante Beschränkung:</strong> Blockiert ausgewählte Apps während bestimmter Zeiträume vollständig. Beispiel: „Social Media von 22:00 bis 7:00 Uhr blockieren". Ideal für die Schlafenszeit-Verwaltung.</p>
-                            <p><strong>Hauptunterschiede:</strong></p>
-                            <ul>
-                                <li>Schedule: Begrenzt die gesamte tägliche Nutzungszeit</li>
-                                <li>Downtime: Vollständige Blockierung während bestimmter Zeiträume</li>
-                            </ul>
+                            <p>Ein Nutzungslimit begrenzt die tägliche Nutzungsdauer, zum Beispiel auf 30 Minuten soziale Medien an Werktagen.</p>
+                            <p>Eine geplante Beschränkung sperrt ausgewählte Apps in einem Zeitraum, etwa von 22 bis 7 Uhr.</p>
                         </div>
                     </div>
                 </div>
@@ -396,23 +316,13 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p><strong>Kostenlose Version:</strong></p>
-                            <ul>
-                                <li>Zeitpläne: Bis zu 1</li>
-                                <li>Strenge Beschränkung: Nicht verfügbar</li>
-                            </ul>
-                            <p><strong>Pro-Plan:</strong></p>
-                            <ul>
-                                <li>Zeitpläne: Bis zu 6</li>
-                                <li>Strenge Beschränkung: Verfügbar</li>
-                            </ul>
-                            <p>Testen Sie die Pro-Funktionen mit einer 7-tägigen kostenlosen Testversion.</p>
+                            <p>Die kostenlose Version erlaubt ein Nutzungslimit, Applimits Pro bis zu sechs. Pro enthält auch die strenge Beschränkung.</p>
+                            <p>Preise und Bedingungen eines gegebenenfalls verfügbaren Probeangebots stehen auf dem Kaufbildschirm.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Nutzungszeitlimit -->
             <div class="category">
                 <h2 class="category-title">Nutzungszeitlimit</h2>
 
@@ -422,15 +332,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Sie können die tägliche App-Nutzungszeit festlegen.</p>
-                            <p><strong>Einstellungsmethode:</strong></p>
-                            <ul>
-                                <li>Wenn mehrere Apps ausgewählt sind, werden Beschränkungen angewendet, wenn die kombinierte Nutzungszeit die eingestellte Zeit überschreitet</li>
-                                <li>Sie können für jeden Wochentag unterschiedliche Zeitlimits festlegen</li>
-                                <li>Verwenden Sie Voreinstellungen (Werktage/Wochenende/Jeden Tag) für eine einfache Masseneinstellung</li>
-                                <li>Bei Einstellung auf 0 Minuten werden Apps an diesem Tag vollständig blockiert</li>
-                            </ul>
-                            <p><strong>Beispiel:</strong> Sie können „Mo–Fr 30 Minuten, Sa–So 60 Minuten" einstellen.</p>
+                            <p>Wähle Apps aus und lege unter den Nutzungslimits für jeden Tag die Dauer fest. Bei mehreren Apps im selben Limit wird die Nutzungszeit addiert.</p>
                         </div>
                     </div>
                 </div>
@@ -456,13 +358,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Wenn Sie das eingestellte Zeitlimit erreichen, werden die ausgewählten Apps oder Kategorien automatisch blockiert.</p>
-                            <p><strong>Verhalten während der Beschränkung:</strong></p>
-                            <ul>
-                                <li>Wenn Sie versuchen, eine beschränkte App zu öffnen, wird der iPhone/iPad-Bildschirmzeit-Bildschirm angezeigt</li>
-                                <li>Wenn „Strenge Beschränkung" nicht aktiviert ist, können Sie sie vorübergehend mit „Nur heute deaktivieren" aufheben</li>
-                                <li>Das Zeitlimit wird um 0:00 Uhr am nächsten Tag zurückgesetzt und wird wieder aktiv</li>
-                            </ul>
+                            <p>Beim Öffnen einer beschränkten App erscheint nach Erreichen des Limits ein Sperrbildschirm. Das Limit wird um Mitternacht zurückgesetzt und folgt den Einstellungen des neuen Tages. Wenn die Option verfügbar ist, kannst du die Beschränkung für heute pausieren.</p>
                         </div>
                     </div>
                 </div>
@@ -473,21 +369,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Wenn Sie eine Kategorie auswählen, werden alle Apps in dieser Kategorie automatisch beschränkt.</p>
-                            <p><strong>Beispiele verfügbarer Kategorien:</strong></p>
-                            <ul>
-                                <li>Soziale Netzwerke (Twitter, Instagram, Facebook usw.)</li>
-                                <li>Unterhaltung (YouTube, Netflix, TikTok usw.)</li>
-                                <li>Spiele (alle Spiele-Apps)</li>
-                                <li>Und viele weitere Kategorien</li>
-                            </ul>
-                            <p>Wenn Sie eine neue App in einer Kategorie installieren, wird sie automatisch in die Beschränkung einbezogen.</p>
+                            <p>Die Beschränkung gilt für Apps in der Kategorie, die du in Apples Bildschirmzeit ausgewählt hast. Wähle einzelne Apps aus, wenn du nur diese beschränken möchtest.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Geplante Beschränkung -->
             <div class="category">
                 <h2 class="category-title">Geplante Beschränkung</h2>
 
@@ -511,39 +398,22 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Ja, das ist möglich. Sie können eine Einstellung über Mitternacht hinaus konfigurieren.</p>
-                            <p><strong>Beispiel:</strong> Bei der Einstellung „22:00 – 7:00 Uhr" werden Apps von 22 Uhr bis 7 Uhr am nächsten Morgen blockiert.</p>
-                            <p><strong>Voreinstellungen:</strong></p>
-                            <ul>
-                                <li>Schlafenszeit (22:00 – 7:00 Uhr)</li>
-                                <li>Lernzeit (19:00 – 21:00 Uhr)</li>
-                                <li>Nacht (0:00 – 6:00 Uhr)</li>
-                            </ul>
-                            <p>Sie können auch für jeden Wochentag unterschiedliche Einstellungen vornehmen.</p>
+                            <p>Ja. Eine Beschränkung von 22 bis 7 Uhr gilt ab 22 Uhr am Starttag bis 7 Uhr am nächsten Morgen.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Jetzt beschränken -->
             <div class="category">
-                <h2 class="category-title">Jetzt beschränken</h2>
+                <h2 class="category-title">Fokus-Timer</h2>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Was ist „Jetzt beschränken"?
+                        Was ist der Fokus-Timer?
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Es ist eine Funktion, die Ihnen hilft, Ihre Konzentration mithilfe eines Timers und der Pomodoro-Technik zu steigern.</p>
-                            <p><strong>Was ist die Pomodoro-Technik:</strong> Eine Zeitmanagement-Methode, die durch den Wechsel von 25-minütigen konzentrierten Arbeitsphasen und 5-minütigen Pausen eine hohe Konzentration aufrechterhält.</p>
-                            <p><strong>Verwendung:</strong></p>
-                            <ol>
-                                <li>Wählen Sie die Apps aus, die Sie beschränken möchten</li>
-                                <li>Stellen Sie die Timer-Dauer ein (15 Minuten, 30 Minuten, 1 Stunde oder benutzerdefiniert)</li>
-                                <li>Aktivieren Sie Pomodoro</li>
-                                <li>Stellen Sie die Pausenzeit ein</li>
-                            </ol>
+                            <p>Er beschränkt ausgewählte Apps sofort für eine festgelegte Dauer. Wähle die Apps und die Dauer und starte den Timer. Im Pomodoro-Modus wechseln sich Fokus und Pausen ab.</p>
                         </div>
                     </div>
                 </div>
@@ -554,19 +424,12 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Ja, Sie erhalten eine Benachrichtigung, wenn der Timer endet (wenn die Benachrichtigungsberechtigung erteilt wurde).</p>
-                            <p><strong>Benachrichtigungsinhalt:</strong></p>
-                            <ul>
-                                <li>Benachrichtigung über Timer-Ende</li>
-                                <li>Beginn der eingestellten Pausenzeit</li>
-                            </ul>
-                            <p><strong>Hinweis:</strong> Die Benachrichtigungsberechtigung ist optional, aber ohne sie erhalten Sie keine Timer-Ende-Benachrichtigungen. Wir empfehlen, die Benachrichtigungsberechtigung beim ersten Start oder über den Einstellungsbildschirm zu erteilen.</p>
+                            <p>Aktiviere Benachrichtigungen in den Timer-Einstellungen und erlaube Mitteilungen für Applimits in den Geräteeinstellungen, um am Ende des Timers eine Meldung zu erhalten.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Strenge Beschränkung -->
             <div class="category">
                 <h2 class="category-title">Strenge Beschränkung</h2>
 
@@ -576,36 +439,22 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Die Strenge Beschränkung ist eine leistungsstarke Beschränkungsfunktion, die nach der Aktivierung <strong>bis 0:00 Uhr am nächsten Tag nicht deaktiviert werden kann</strong> (nur Pro-Plan).</p>
-                            <p><strong>Merkmale:</strong></p>
-                            <ul>
-                                <li>Nach der Aktivierung können Einstellungen bis 0:00 Uhr am nächsten Tag nicht geändert oder gelöscht werden</li>
-                                <li>Verfügbar für Zeitpläne, Fokus-Timer und Auszeit</li>
-                                <li>Stärkt die Selbstkontrolle und schafft eine Umgebung, die Versuchungen widersteht</li>
-                            </ul>
-                            <p><span class="highlight">Achtung:</span> Bitte überprüfen Sie Ihre Einstellungen sorgfältig, bevor Sie die Strenge Beschränkung aktivieren. Einmal aktiviert, kann sie nicht rückgängig gemacht werden. (Wenn Sie sie unbedingt deaktivieren müssen, löschen Sie bitte die App.)</p>
+                            <p>Die strenge Beschränkung von Applimits Pro schränkt Änderungen an Nutzungslimits und geplanten Beschränkungen ein. Für einen Countdown kannst du ein Enddatum und eine Uhrzeit angeben. Eine Option verhindert außerdem, dass du den laufenden Timer anhältst.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Kann die Strenge Beschränkung wirklich nicht deaktiviert werden?
+                        Wann kann ich meine Einstellungen nach der strengen Beschränkung wieder bearbeiten?
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Ja, nach der Aktivierung der Strengen Beschränkung <strong>kann sie bis 0:00 Uhr (Mitternacht) am nächsten Tag nicht deaktiviert werden</strong>. Dies ist ein beabsichtigtes Design.</p>
-                            <p><strong>Wann sie aufgehoben wird:</strong></p>
-                            <ul>
-                                <li>Sie wird um 0:00 Uhr (Mitternacht) am nächsten Tag automatisch aufgehoben</li>
-                                <li>Bis dahin kann sie selbst durch Neustart des Geräts nicht deaktiviert werden</li>
-                                <li>Sie können sie durch Löschen der App deaktivieren. Löschen Sie die App daher im Notfall</li>
-                            </ul>
+                            <p>Das hängt vom Modus und den Einstellungen ab. Ein Countdown gibt die Einstellungen zur gewählten Zeit frei. Wenn du den Modus vorher ausschaltest, können sie bis zur in der App angezeigten Zeit gesperrt bleiben, etwa bis Mitternacht.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
